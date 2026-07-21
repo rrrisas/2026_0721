@@ -191,7 +191,7 @@ namespace _2026_0721
 
         static int CalcDamage(int attac, int defense)
         {
-            
+         return   
         }
     }
 
