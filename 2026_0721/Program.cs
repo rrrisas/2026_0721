@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using System.Reflection.Metadata.Ecma335;
 using System.Runtime.CompilerServices;
 
 namespace _2026_0721
@@ -7,90 +8,141 @@ namespace _2026_0721
     {
         static void Main(string[] args)
         {
-        //    //2.1.1
-        //    mondai2_1_1();
+            //    //2.1.1
+            //    mondai2_1_1();
 
-        //    //2.1.2
-        //    mondai2_1_2();
+            //    //2.1.2
+            //    mondai2_1_2();
 
-        //    //2.1.3
-        //    mondai2_1_3();
-        //    //2.1.4
-        //    mondai2_1_4();
+            //    //2.1.3
+            //    mondai2_1_3();
+            //    //2.1.4
+            //    mondai2_1_4();
 
-        //    string s = "11";
-        //    int x = 11;
-        //    //int→stringにする
-        //    s = x.ToString();
-        //    //2.2.1
-        //    mondai2_2_1();
-        //    //2.2.2
-        //    mondai2_2_2();
-        //    //2.2.3
-        //    int c = int.Parse(Console.ReadLine());
-        //    int d = int.Parse(Console.ReadLine());
-        //    mondai2_2_3(c,d);
-        //    //2.2.4
-        //    int e = int.Parse(Console.ReadLine());
-        //    mondai2_2_4(e);
-        //    //ex
-        //    int f = Power(3);
-        //    Console.WriteLine($"{f}");
-        //    //
-          
-        //    int g = int.Parse(Console.ReadLine());
-        //    aaa(g);
-        //    Console.WriteLine(g);
+            //    string s = "11";
+            //    int x = 11;
+            //    //int→stringにする
+            //    s = x.ToString();
+            //    //2.2.1
+            //    mondai2_2_1();
+            //    //2.2.2
+            //    mondai2_2_2();
+            //    //2.2.3
+            //    int c = int.Parse(Console.ReadLine());
+            //    int d = int.Parse(Console.ReadLine());
+            //    mondai2_2_3(c,d);
+            //    //2.2.4
+            //    int e = int.Parse(Console.ReadLine());
+            //    mondai2_2_4(e);
+            //    //ex
+            //    int f = Power(3);
+            //    Console.WriteLine($"{f}");
+            //    //
 
-        //    //
-        //    double h = int.Parse(Console.ReadLine());
-        //    double i = CircleArea(h);
-        //    Console.WriteLine(i);
+            //    int g = int.Parse(Console.ReadLine());
+            //    aaa(g);
+            //    Console.WriteLine(g);
 
-        //    //
-        //    int j = int.Parse(Console.ReadLine());
-        //    Time(j);
-        //    Console.WriteLine(j);
+            //    //
+            //    double h = int.Parse(Console.ReadLine());
+            //    double i = CircleArea(h);
+            //    Console.WriteLine(i);
 
-        //    //練習
-        //    int a = Calc(2, 3);
-        //    Console.WriteLine($"{a}");
-             
-        //    //足し算
-        //    int k = Add(4,5);
-        //    Console.WriteLine($"{k}");
+            //    //
+            //    int j = int.Parse(Console.ReadLine());
+            //    Time(j);
+            //    Console.WriteLine(j);
 
-        //    //偶数判定
-        //    int m = int.Parse(Console.ReadLine());
-        //    bool l = IsEven(m);
-        //    if (l)
-        //    {
-        //        Console.WriteLine("偶数");
-        //    }
-        //    else 
-        //    {
-        //        Console.WriteLine("奇数");
-        //    }
+            //    //練習
+            //    int a = Calc(2, 3);
+            //    Console.WriteLine($"{a}");
+
+            //    //足し算
+            //    int k = Add(4,5);
+            //    Console.WriteLine($"{k}");
+
+            //    //偶数判定
+            //    int m = int.Parse(Console.ReadLine());
+            //    bool l = IsEven(m);
+            //    if (l)
+            //    {
+            //        Console.WriteLine("偶数");
+            //    }
+            //    else 
+            //    {
+            //        Console.WriteLine("奇数");
+            //    }
             //税込み価格
-            int n = int.Parse(Console.ReadLine());
-            int o = CalcTax(n);
-            Console.WriteLine(o);
+            //int n = int.Parse(Console.ReadLine());
+            //int o = CalcTax(n);
+            //Console.WriteLine(o);
 
             //最大値
-            int p = int.Parse(Console.ReadLine());
-            int q = int.Parse(Console.ReadLine());
-            int r = int.Parse(Console.ReadLine());
-            
-            Console.WriteLine(GetMax(p, q, r));
-                
+            //int p = int.Parse(Console.ReadLine());
+            //int q = int.Parse(Console.ReadLine());
+            //int r = int.Parse(Console.ReadLine());
 
-    }
+            //Console.WriteLine(GetMax(p, q, r));
+
+            //2.3.1
+            //int a = int.Parse(Console.ReadLine());
+            //int b = int.Parse(Console.ReadLine());
+            //int c = Hennsuu(a, b);
+
+            //2.3.2
+
+            //int a = int.Parse(Console.ReadLine());
+            //int c = int.Parse(Console.ReadLine());
+            //int b = Suuchi(a, c);
+
+            //2.3.3
+            //int a = int.Parse(Console.ReadLine());
+            //bool b = Seisuu(a);
+            //if (b)
+            //{
+            //    Console.WriteLine("偶数");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("奇数");
+            //}
+
+            //2.3.4
+            // int a = int.Parse(Console.ReadLine());
+            //Tennsuu(a);
+
+            //2.3.4
+            //int a = int.Parse(Console.ReadLine());
+            //Test(a);
+
+            //2.3.4
+            //int a = int.Parse(Console.ReadLine());
+            //Test2(a);
+
+            //2.4.1
+            //Spam();
+
+            //2.4.2
+            //Kuku();
+
+            //2.4.3
+            //Avg();
+
+            //2.4.4
+            // Giants();
+
+            //2.4.5
+            counts();
+
+
+
+        }
         static int Calc(int x, int y)
         {
             return (x + y);
         }
 
-        static void mondai2_1_1() 
+        static void mondai2_1_1()
         {
             Console.WriteLine("Hello, World!");
         }
@@ -111,12 +163,12 @@ namespace _2026_0721
             Console.WriteLine(13 * 17);
         }
 
-        static void mondai2_2_1() 
+        static void mondai2_2_1()
         {
             string s = Console.ReadLine();
             Console.WriteLine(s);
         }
-        
+
         static void mondai2_2_2()
         {
             int x = int.Parse(Console.ReadLine());
@@ -130,7 +182,7 @@ namespace _2026_0721
         {
             Console.WriteLine(x * 365);
         }
-        static int Power(int x) 
+        static int Power(int x)
         {
             return (x * x);
         }
@@ -140,13 +192,13 @@ namespace _2026_0721
             {
                 return;
             }
-           Console.WriteLine("値が10以下です");
-           
+            Console.WriteLine("値が10以下です");
+
         }
 
-        static double CircleArea(double x) 
+        static double CircleArea(double x)
         {
-            return(x * x * 3.14);
+            return (x * x * 3.14);
         }
 
         static void Time(int x)
@@ -158,12 +210,12 @@ namespace _2026_0721
             Console.WriteLine($"{hours}時間{minute}分{seconds}秒");
         }
 
-        static int Add(int a, int b) 
+        static int Add(int a, int b)
         {
-            return(a + b);
+            return (a + b);
         }
 
-        static bool IsEven(int number) 
+        static bool IsEven(int number)
         {
             if (number % 2 == 0)
             {
@@ -176,12 +228,12 @@ namespace _2026_0721
 
         static int CalcTax(int price)
         {
-            return(int)Math.Floor(price * 1.1);
+            return (int)Math.Floor(price * 1.1);
         }
 
-        static int GetMax(int a, int b, int c) 
+        static int GetMax(int a, int b, int c)
         {
-            return Math.Max(a,Math.Max(b, c));
+            return Math.Max(a, Math.Max(b, c));
         }
 
         static int CalcTax(int price, int a)
@@ -189,10 +241,190 @@ namespace _2026_0721
             return (int)Math.Floor(price * 1.1);
         }
 
-        static int CalcDamage(int attac, int defense)
-        {
-         return   
-        }
-    }
+        //static int CalcDamage(int attac, int defense)
+        //{
+        //return   
 
+        static int Suuchi(int x, int y)
+        {
+            if (x > y)
+            {
+                Console.WriteLine("xはyより大きい");
+                return 1;
+            }
+            else if (x < y)
+            {
+                Console.WriteLine("xはyより小さい");
+                return -1;
+            }
+            Console.WriteLine("xとyは等しい");
+            return 0;
+        }
+
+        static int Hennsuu(int x, int y)
+        {
+            if (x > y)
+            {
+                Console.WriteLine("xはyより大きい");
+                return 1;
+            }
+            return 0;
+        }
+
+        static bool Seisuu(int x)
+        {
+            if (x % 2 == 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        static void Tennsuu(int x)
+        {
+            if (x >= 60)
+            {
+                Console.WriteLine("合格");
+                return;
+            }
+            Console.WriteLine("不合格");
+        }
+
+        static void Test(int x)
+        {
+            if (x >= 80)
+            {
+                Console.WriteLine("合格");
+                return;
+            }
+            else if (x >= 60)
+            {
+                Console.WriteLine("不合格");
+                return;
+            }
+            Console.WriteLine("残念でした");
+        }
+
+        static void Test2(int x)
+        {
+            if (x >= 80)
+            {
+                Console.WriteLine("優");
+                return;
+            }
+            else if (x >= 70)
+            {
+                Console.WriteLine("良");
+                return;
+            }
+            else if (x >= 60)
+            {
+                Console.WriteLine("可");
+                return;
+            }
+            Console.WriteLine("不可");
+        }
+
+        static void Spam()
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("SPAM");
+            }
+        }
+
+        static void Kuku()
+        {
+            for (int i = 1; i <= 9; i++)
+            {
+                Console.WriteLine(3 * i);
+            }
+        }
+
+        static void Avg()
+        {
+            double a = 0;
+            for (double i = 0; i < 10; i++)
+            {
+                a += double.Parse(Console.ReadLine());
+            }
+            Console.WriteLine(Math.Truncate(a / 10));
+        }
+
+        static void Giants()
+        {
+            int a = 0;
+            int b = 0;
+            int c = 0;
+            int d = 0;
+
+            for (int i = 1; i < 10; i++)
+            {
+
+                Console.WriteLine($"{i}表、巨人の得点は？");
+                a = int.Parse(Console.ReadLine());
+
+                Console.WriteLine($"{i}裏、阪神の得点は？");
+                b = int.Parse(Console.ReadLine());
+
+                c += a;
+                d += b;
+            }
+
+            Console.WriteLine($"巨人{c}点 , 阪神：{d}点");
+
+            if (c > d)
+            {
+                Console.WriteLine("巨人の勝ち♪");
+                return;
+            }
+            else if (c < d)
+            {
+                Console.WriteLine("阪神の勝ち");
+                return;
+            }
+            Console.WriteLine("引き分け");
+        }
+        static void counts()
+        {
+            int c = 0;
+            int d = 0;
+
+            for (int i = 0; i < 99; i++)
+            {
+                Console.WriteLine("ストライク=1, ボール=2，ファウル=3 ?");
+                int a = int.Parse(Console.ReadLine());
+
+                if (a == 1)
+                {
+                    c++;
+
+                    if (c == 3)
+                    {
+                        break;
+                    }
+                }
+                else if (a == 2)
+                {
+                    d++;
+
+                    if (d == 4)
+                    {
+                        break;
+                    }
+                }
+                else if (a == 3)
+                {
+                    if (c <= 1)
+                    {
+                        c++;
+                    }
+                }
+            
+            }
+
+            Console.WriteLine($"{d}ボール{c}ストライク");
+        }
+    
+    }
 }
