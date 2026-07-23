@@ -132,299 +132,492 @@ namespace _2026_0721
             // Giants();
 
             //2.4.5
-            counts();
+            //counts();
+
+            //2.5.1
+            //Hairertsu();
 
 
+            //Kuku2();
 
+            //2.5.2
+
+            //Hairertsu2();
+
+            //2.5.3
+
+            //int[,] kuku = new int[9, 9];
+            //for (int i = 1; i < 10; i++)
+            //{
+
+            //    for (int j = 1; j < 10; j++)
+            //    {
+            //        Console.Write($"{i}×{j}={i * j}\t");
+            //    }
+            //    Console.WriteLine();
+
+            //}
+
+            //2.5.4
+            //Seisuu2();
+
+            //2.6.1
+            //int a = int.Parse(Console.ReadLine());
+            //int b = Nijou(a);
+            //Console.WriteLine(b);
+
+            //2.6.2
+            //int a = int.Parse(Console.ReadLine());
+            //int b = int.Parse(Console.ReadLine());
+            //int c = Avge(a, b);
+            //Console.WriteLine(c);
+
+            //2.6.3
+            //int a = int.Parse(Console.ReadLine());
+            //int b = int.Parse(Console.ReadLine());
+            //int d = int.Parse(Console.ReadLine());
+            //int c = Max(a, b, d);
+            //Console.WriteLine(c);
+
+            //2.6.4
+            //int[] a = new int[5];
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    Console.WriteLine($"{i + 1}回目");
+            //    a[i] = int.Parse(Console.ReadLine());
+            //}
+
+            //int s = Mma(a);
+            //Console.WriteLine($"入力された最大値は{s}です");
+
+            //int[] a = new int[5];
+
+            //for(int i = 0; i < 5; i++)
+            //{
+            //    Console.WriteLine($"{i + 1}回目");
+            //    a[i] = int.Parse(Console.ReadLine());
+            //}
+
+            //int b = Mi(a);
+            //Console.WriteLine($"入力された最小値は{b}です");
+
+            int[] a = new int[5];
+            for(int i = 0; i < 5; i++)
+            {
+                Console.WriteLine($"{i + 1}回目");
+                a[i] = int.Parse(Console.ReadLine());
+            }
+
+            int b = Avge(a);
+            Console.WriteLine($"入力された平均値は{b}です");
         }
         static int Calc(int x, int y)
-        {
-            return (x + y);
-        }
-
-        static void mondai2_1_1()
-        {
-            Console.WriteLine("Hello, World!");
-        }
-        static void mondai2_1_2()
-        {
-            int x = 11;
-            Console.WriteLine($"x={x}");
-
-        }
-        static void mondai2_1_3()
-        {
-            int x = 13;
-            int y = 17;
-            Console.WriteLine($"x={x + y}");
-        }
-        static void mondai2_1_4()
-        {
-            Console.WriteLine(13 * 17);
-        }
-
-        static void mondai2_2_1()
-        {
-            string s = Console.ReadLine();
-            Console.WriteLine(s);
-        }
-
-        static void mondai2_2_2()
-        {
-            int x = int.Parse(Console.ReadLine());
-            Console.WriteLine(x);
-        }
-        static void mondai2_2_3(int x, int y)
-        {
-            Console.WriteLine((x + y) / 2);
-        }
-        static void mondai2_2_4(int x)
-        {
-            Console.WriteLine(x * 365);
-        }
-        static int Power(int x)
-        {
-            return (x * x);
-        }
-        static void aaa(int x)
-        {
-            if (x >= 10)
             {
-                return;
+                return (x + y);
             }
-            Console.WriteLine("値が10以下です");
 
-        }
-
-        static double CircleArea(double x)
-        {
-            return (x * x * 3.14);
-        }
-
-        static void Time(int x)
-        {
-            int hours = x / 3600;
-            int minute = (x % 3600) / 60;
-            int seconds = x % 60;
-
-            Console.WriteLine($"{hours}時間{minute}分{seconds}秒");
-        }
-
-        static int Add(int a, int b)
-        {
-            return (a + b);
-        }
-
-        static bool IsEven(int number)
-        {
-            if (number % 2 == 0)
+            static void mondai2_1_1()
             {
-                return true;
+                Console.WriteLine("Hello, World!");
             }
+            static void mondai2_1_2()
             {
+                int x = 11;
+                Console.WriteLine($"x={x}");
+
+            }
+            static void mondai2_1_3()
+            {
+                int x = 13;
+                int y = 17;
+                Console.WriteLine($"x={x + y}");
+            }
+            static void mondai2_1_4()
+            {
+                Console.WriteLine(13 * 17);
+            }
+
+            static void mondai2_2_1()
+            {
+                string s = Console.ReadLine();
+                Console.WriteLine(s);
+            }
+
+            static void mondai2_2_2()
+            {
+                int x = int.Parse(Console.ReadLine());
+                Console.WriteLine(x);
+            }
+            static void mondai2_2_3(int x, int y)
+            {
+                Console.WriteLine((x + y) / 2);
+            }
+            static void mondai2_2_4(int x)
+            {
+                Console.WriteLine(x * 365);
+            }
+            static int Power(int x)
+            {
+                return (x * x);
+            }
+            static void aaa(int x)
+            {
+                if (x >= 10)
+                {
+                    return;
+                }
+                Console.WriteLine("値が10以下です");
+
+            }
+
+            static double CircleArea(double x)
+            {
+                return (x * x * 3.14);
+            }
+
+            static void Time(int x)
+            {
+                int hours = x / 3600;
+                int minute = (x % 3600) / 60;
+                int seconds = x % 60;
+
+                Console.WriteLine($"{hours}時間{minute}分{seconds}秒");
+            }
+
+            static int Add(int a, int b)
+            {
+                return (a + b);
+            }
+
+            static bool IsEven(int number)
+            {
+                if (number % 2 == 0)
+                {
+                    return true;
+                }
+                {
+                    return false;
+                }
+            }
+
+            static int CalcTax(int price)
+            {
+                return (int)Math.Floor(price * 1.1);
+            }
+
+            static int GetMax(int a, int b, int c)
+            {
+                return Math.Max(a, Math.Max(b, c));
+            }
+
+            //static int CalcTax(int price, int a)
+           // {
+               // return (int)Math.Floor(price * 1.1);
+           // }
+
+            //static int CalcDamage(int attac, int defense)
+            //{
+            //return   
+
+            static int Suuchi(int x, int y)
+            {
+                if (x > y)
+                {
+                    Console.WriteLine("xはyより大きい");
+                    return 1;
+                }
+                else if (x < y)
+                {
+                    Console.WriteLine("xはyより小さい");
+                    return -1;
+                }
+                Console.WriteLine("xとyは等しい");
+                return 0;
+            }
+
+            static int Hennsuu(int x, int y)
+            {
+                if (x > y)
+                {
+                    Console.WriteLine("xはyより大きい");
+                    return 1;
+                }
+                return 0;
+            }
+
+            static bool Seisuu(int x)
+            {
+                if (x % 2 == 0)
+                {
+                    return true;
+                }
                 return false;
             }
-        }
 
-        static int CalcTax(int price)
-        {
-            return (int)Math.Floor(price * 1.1);
-        }
-
-        static int GetMax(int a, int b, int c)
-        {
-            return Math.Max(a, Math.Max(b, c));
-        }
-
-        static int CalcTax(int price, int a)
-        {
-            return (int)Math.Floor(price * 1.1);
-        }
-
-        //static int CalcDamage(int attac, int defense)
-        //{
-        //return   
-
-        static int Suuchi(int x, int y)
-        {
-            if (x > y)
+            static void Tennsuu(int x)
             {
-                Console.WriteLine("xはyより大きい");
-                return 1;
-            }
-            else if (x < y)
-            {
-                Console.WriteLine("xはyより小さい");
-                return -1;
-            }
-            Console.WriteLine("xとyは等しい");
-            return 0;
-        }
-
-        static int Hennsuu(int x, int y)
-        {
-            if (x > y)
-            {
-                Console.WriteLine("xはyより大きい");
-                return 1;
-            }
-            return 0;
-        }
-
-        static bool Seisuu(int x)
-        {
-            if (x % 2 == 0)
-            {
-                return true;
-            }
-            return false;
-        }
-
-        static void Tennsuu(int x)
-        {
-            if (x >= 60)
-            {
-                Console.WriteLine("合格");
-                return;
-            }
-            Console.WriteLine("不合格");
-        }
-
-        static void Test(int x)
-        {
-            if (x >= 80)
-            {
-                Console.WriteLine("合格");
-                return;
-            }
-            else if (x >= 60)
-            {
+                if (x >= 60)
+                {
+                    Console.WriteLine("合格");
+                    return;
+                }
                 Console.WriteLine("不合格");
-                return;
-            }
-            Console.WriteLine("残念でした");
-        }
-
-        static void Test2(int x)
-        {
-            if (x >= 80)
-            {
-                Console.WriteLine("優");
-                return;
-            }
-            else if (x >= 70)
-            {
-                Console.WriteLine("良");
-                return;
-            }
-            else if (x >= 60)
-            {
-                Console.WriteLine("可");
-                return;
-            }
-            Console.WriteLine("不可");
-        }
-
-        static void Spam()
-        {
-            for (int i = 0; i < 10; i++)
-            {
-                Console.WriteLine("SPAM");
-            }
-        }
-
-        static void Kuku()
-        {
-            for (int i = 1; i <= 9; i++)
-            {
-                Console.WriteLine(3 * i);
-            }
-        }
-
-        static void Avg()
-        {
-            double a = 0;
-            for (double i = 0; i < 10; i++)
-            {
-                a += double.Parse(Console.ReadLine());
-            }
-            Console.WriteLine(Math.Truncate(a / 10));
-        }
-
-        static void Giants()
-        {
-            int a = 0;
-            int b = 0;
-            int c = 0;
-            int d = 0;
-
-            for (int i = 1; i < 10; i++)
-            {
-
-                Console.WriteLine($"{i}表、巨人の得点は？");
-                a = int.Parse(Console.ReadLine());
-
-                Console.WriteLine($"{i}裏、阪神の得点は？");
-                b = int.Parse(Console.ReadLine());
-
-                c += a;
-                d += b;
             }
 
-            Console.WriteLine($"巨人{c}点 , 阪神：{d}点");
-
-            if (c > d)
+            static void Test(int x)
             {
-                Console.WriteLine("巨人の勝ち♪");
-                return;
-            }
-            else if (c < d)
-            {
-                Console.WriteLine("阪神の勝ち");
-                return;
-            }
-            Console.WriteLine("引き分け");
-        }
-        static void counts()
-        {
-            int c = 0;
-            int d = 0;
-
-            for (int i = 0; i < 99; i++)
-            {
-                Console.WriteLine("ストライク=1, ボール=2，ファウル=3 ?");
-                int a = int.Parse(Console.ReadLine());
-
-                if (a == 1)
+                if (x >= 80)
                 {
-                    c++;
-
-                    if (c == 3)
-                    {
-                        break;
-                    }
+                    Console.WriteLine("合格");
+                    return;
                 }
-                else if (a == 2)
+                else if (x >= 60)
                 {
-                    d++;
-
-                    if (d == 4)
-                    {
-                        break;
-                    }
+                    Console.WriteLine("不合格");
+                    return;
                 }
-                else if (a == 3)
+                Console.WriteLine("残念でした");
+            }
+
+            static void Test2(int x)
+            {
+                if (x >= 80)
                 {
-                    if (c <= 1)
+                    Console.WriteLine("優");
+                    return;
+                }
+                else if (x >= 70)
+                {
+                    Console.WriteLine("良");
+                    return;
+                }
+                else if (x >= 60)
+                {
+                    Console.WriteLine("可");
+                    return;
+                }
+                Console.WriteLine("不可");
+            }
+
+            static void Spam()
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    Console.WriteLine("SPAM");
+                }
+            }
+
+            static void Kuku()
+            {
+                for (int i = 1; i <= 9; i++)
+                {
+                    Console.WriteLine(3 * i);
+                }
+            }
+
+            static void Avg()
+            {
+                double a = 0;
+                for (double i = 0; i < 10; i++)
+                {
+                    a += double.Parse(Console.ReadLine());
+                }
+                Console.WriteLine(Math.Truncate(a / 10));
+            }
+
+            static void Giants()
+            {
+                int a = 0;
+                int b = 0;
+                int c = 0;
+                int d = 0;
+
+                for (int i = 1; i < 10; i++)
+                {
+
+                    Console.WriteLine($"{i}表、巨人の得点は？");
+                    a = int.Parse(Console.ReadLine());
+
+                    Console.WriteLine($"{i}裏、阪神の得点は？");
+                    b = int.Parse(Console.ReadLine());
+
+                    c += a;
+                    d += b;
+                }
+
+                Console.WriteLine($"巨人{c}点 , 阪神：{d}点");
+
+                if (c > d)
+                {
+                    Console.WriteLine("巨人の勝ち♪");
+                    return;
+                }
+                else if (c < d)
+                {
+                    Console.WriteLine("阪神の勝ち");
+                    return;
+                }
+                Console.WriteLine("引き分け");
+            }
+            static void counts()
+            {
+                int c = 0;
+                int d = 0;
+
+                for (int i = 0; i < 99; i++)
+                {
+                    Console.WriteLine("ストライク=1, ボール=2，ファウル=3 ?");
+                    int a = int.Parse(Console.ReadLine());
+
+                    if (a == 1)
                     {
                         c++;
+
+                        if (c == 3)
+                        {
+                            break;
+                        }
                     }
+                    else if (a == 2)
+                    {
+                        d++;
+
+                        if (d == 4)
+                        {
+                            break;
+                        }
+                    }
+                    else if (a == 3)
+                    {
+                        if (c <= 1)
+                        {
+                            c++;
+                        }
+                    }
+
                 }
-            
+
+                Console.WriteLine($"{d}ボール{c}ストライク");
             }
 
-            Console.WriteLine($"{d}ボール{c}ストライク");
+            static void Hairertsu()
+            {
+                int[] a = new int[10];
+                for (int i = 0; i < 10; i++)
+                {
+                    a[i] = int.Parse(Console.ReadLine());
+                }
+                for (int i = 0; i < 10; i++)
+                {
+                    Console.WriteLine(a[i] * 2);
+                }
+            }
+
+            static void Hairertsu2()
+            {
+                int[] a = new int[10];
+                for (int i = 0; i < 10; i++)
+                {
+                    a[i] = int.Parse(Console.ReadLine());
+                }
+
+                Console.Write("偶数 : ");
+                for (int i = 0; i < 10; i++)
+                {
+                    if (a[i] % 2 == 0)
+                    {
+                        Console.Write($"{a[i]} ");
+                    }
+                }
+
+                Console.WriteLine();
+
+                Console.Write("奇数 : ");
+                for (int i = 0; i < 10; i++)
+                {
+                    if (a[i] % 2 != 0)
+                    {
+                        Console.Write($"{a[i]} ");
+                    }
+                }
+            }
+
+        static void Seisuu2()
+        {
+            int[] a = new int[10];
+
+            for (int i = 0; i < 10; i++)
+            {
+                a[i] = int.Parse(Console.ReadLine());
+            }
+            for (int i = 0; i < 9; i++)
+            {
+                if (a[i] < a[i + 1])
+                {
+                    int b = a[i];
+                    a[i] = a[i + 1];
+                    a[i + 1] = b;
+                }
+                Console.WriteLine(i);
+            }
         }
-    
+        static int Nijou(int x)
+        {
+            return x * x;
+        }
+
+        static int Avge(int x, int y)
+        {
+            return(x + y) / 2;
+        }
+
+        static int Max(int x, int y, int z)
+        {
+            return Math.Max(x,Math.Max(y, z));
+        }
+
+        static int Mma(int[] a)
+        {
+            int k = 0;
+           for(int i = 0; i < 4; i++)
+            {
+                if (a[i] > a[i + 1])
+                {
+                    k = a[i];
+                }
+            }
+           if(k < a[4])
+            {
+                k = a[4];
+            }
+            return k;
+        }
+
+        static int Mi(int[] a)
+        {
+            int min = 0;
+            for(int i = 0; i < 5; i++)
+            {
+                if (a[min] > a[i])
+                {
+                    min = a[i];
+                }
+            }
+            return min;
+        }
+
+        static int Avge(int[]a)
+        {
+            int b = 0;
+            for (int i = 0; i< 5; i++)
+            {
+                b += a[i];
+            }
+            return b / 5;
+        }
+
     }
 }
+
+
+   
