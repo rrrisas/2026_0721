@@ -201,15 +201,59 @@ namespace _2026_0721
             //int b = Mi(a);
             //Console.WriteLine($"入力された最小値は{b}です");
 
-            int[] a = new int[5];
-            for(int i = 0; i < 5; i++)
-            {
-                Console.WriteLine($"{i + 1}回目");
-                a[i] = int.Parse(Console.ReadLine());
-            }
+            //int[] a = new int[5];
+            //for(int i = 0; i < 5; i++)
+            //{
+            //    Console.WriteLine($"{i + 1}回目");
+            //    a[i] = int.Parse(Console.ReadLine());
+            //}
 
-            int b = Avge(a);
-            Console.WriteLine($"入力された平均値は{b}です");
+            //int b = Avge(a);
+            //Console.WriteLine($"入力された平均値は{b}です");
+            //2.7.1.2.3
+            //2.7.4
+            //Dog dog = new Dog("ポチ",4,"プードル");
+            //dog.ShowProfile();
+            //2.7.5
+            //2.7.6
+
+            //CoinCase coin = new CoinCase();
+
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    int a = int.Parse(Console.ReadLine());
+            //    int b = int.Parse(Console.ReadLine());
+            //    coin.AddCoins(a, b);
+            //}
+
+            //Console.WriteLine($"500円：{coin.GetCount(500)} 枚");
+            //Console.WriteLine($"100円：{coin.GetCount(100)} 枚");
+            //Console.WriteLine($"50円：{coin.GetCount(50)} 枚");
+            //Console.WriteLine($"10円：{coin.GetCount(10)} 枚");
+            //Console.WriteLine($"5円：{coin.GetCount(5)} 枚");
+            //Console.WriteLine($"1円：{coin.GetCount(1)} 枚");
+
+            //Console.WriteLine("----------------------");
+
+            //Console.WriteLine($"500円：{coin.GetAmount(500)} 円");
+            //Console.WriteLine($"100円：{coin.GetAmount(100)} 円");
+            //Console.WriteLine($"50円：{coin.GetAmount(50)} 円");
+            //Console.WriteLine($"10円：{coin.GetAmount(10)} 円");
+            //Console.WriteLine($"5円：{coin.GetAmount(5)} 円");
+            //Console.WriteLine($"1円：{coin.GetAmount(1)} 円");
+
+            //Console.WriteLine("----------------------");
+            //Console.WriteLine($"総枚数：{coin.GetCount()}枚");
+            //Console.WriteLine("----------------------");
+            //Console.WriteLine($"総額：{coin.GetAmount()} 円");
+
+            //2.7.7
+            Cat cat = new Cat();
+          
+            cat.Name = "タマ";
+            cat.Age = 3;
+            cat.ShowProfile();
+
         }
         static int Calc(int x, int y)
             {
