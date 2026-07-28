@@ -212,7 +212,7 @@ namespace _2026_0721
             //Console.WriteLine($"入力された平均値は{b}です");
             //2.7.1.2.3
             //2.7.4
-            //Dog dog = new Dog("ポチ",4,"プードル");
+            //Dog dog = new Dog("ポチ", 4, "プードル");
             //dog.ShowProfile();
             //2.7.5
             //2.7.6
@@ -284,35 +284,211 @@ namespace _2026_0721
             //    a.Speak();
             //}
 
+
+
             //2.8.1
 
             //2.8.2
-            Console.WriteLine("お好きな寿司を選んでください");
-            Console.WriteLine("1:まぐろ 2:えび 3:こはだ 4:あなご 5:いくら");
+            //Animal dog = new Dog2("ポチ", 3);
+            //Animal cat = new Cat("ミケ", 2);
 
+            //Console.WriteLine(dog);
+            //Console.WriteLine(cat);
+
+            //2.8.3
+
+            //List<Animal> animals = new List<Animal>();
+
+            //animals.Add(new Dog2("ポチ", 4));
+            //animals.Add(new Dog2("アトム",5));
+            //animals.Add(new Cat("たま", 6));
+            //animals.Add(new Cat("クロ",10));
+
+            //foreach(Animal a in animals)
+            //{
+            //    Console.WriteLine(a);
+            //    a.Speak();
+            //}
+
+            //2.8.4
+
+            //List<Animal> animals = new List<Animal>
+            //{
+            //    new Dog2("ポチ", 4),
+            //    new Cat("たま", 1),
+            //    new Bird("ぴー", 7),
+            //    new Dog2("アトム", 12),
+            //    new Cat("ショーン", 5),
+            //    new Bird("イチロー", 9),
+            //};
+
+            //foreach(Animal ani in animals)
+            //{
+            //    Console.WriteLine(ani);
+            //    ani.Speak();
+
+            //    if (ani is Bird b)
+            //    {
+            //        b.Fly();
+            //    }
+
+            //}
+
+            //2.8.5
+
+            //Animal dog = new Dog2("アトム", 12);
+            //dog.Walk();
+            //dog.Walk(3);
+
+            //2.8.6
+            //List<Animal> animals = new List<Animal>
+            //{
+            //    new Dog2("ポチ", 4),
+            //    new Cat("たま", 1),
+            //    new Bird("ぴー", 7),
+            //    new Dog2("アトム", 12),
+            //    new Cat("ショーン", 5),
+            //    new Bird("イチロー", 9),
+            //};
+            //foreach (Animal a in animals)
+            //{
+            //    Console.WriteLine($"{a.Species}・{a.Name}・{a.Age}");
+            //}
+
+            //2.8.7
+            //Animal cat = new Cat("ミケ", 2);
+            //cat.ShowKind();
+
+            //Cat cat1 = new Cat("ミケ", 2);
+            //cat1.ShowKind();
+
+            //2.8.8
+            // ・キャスト失敗時は InvalidCastException が発生してプログラムが落ちる（危険）
+            // ・成功時は Run() が呼ばれる
+            //Animal a = new Dog2("アトム", 12);
+            //((Dog2)a).Run();
+
+            // ・キャスト失敗時は null が返る（例外は出ない）
+            // ・nullチェックすれば安全に Run() を呼べる
+            //Animal a = new Dog2("アトム", 12);
+            //(a as Dog2).Run();
+
+            // ・キャスト成功時だけ d.Run() が呼ばれる
+            // ・失敗時は何もしない（例外なし）
+            // ・null を扱わないので as より安全で読みやすい
+            //Animal a = new Dog2("アトム", 12);
+            //if (a is Dog d2)
+            //{
+            //    d2.Run();
+            //}
+
+            //2.8.9
+            //List<Animal> animals = new List<Animal>
+            //{
+            //    new Dog2("ポチ", 4),
+            //    new Cat("たま", 1),
+            //    new Bird("ぴー", 7),
+            //    new Dog2("アトム", 12),
+            //    new Cat("ショーン", 5),
+            //    new Bird("イチロー", 9),
+            //};
+
+            //foreach(Animal a in animals)
+            //{
+            //    a.DoDaily();
+            //}
+
+            //2.8.10
+
+            //List<IPlayable> animal = new List<IPlayable>
+            //{
+            //    new Dog2("ポチ", 4),
+            //    new Cat("たま", 1),
+            //    new Bird("ぴー", 7),
+            //    new Dog2("アトム", 12),
+            //    new Cat("ショーン", 5),
+            //    new Bird("イチロー", 9),
+            //};
+
+            //foreach (IPlayable a in animal)
+            //{
+            //    //if(a is IPlayable b)
+            //   // {
+            //        a.Play();
+            //    //
+            //}
+
+            //List<Animal> animals = new List<Animal>
+            //{
+            //    new Dog2("ポチ", 4),
+            //    new Cat("たま", 1),
+            //    new Bird("ぴー", 7),
+            //    new Dog2("アトム", 12),
+            //    new Cat("ショーン", 5),
+            //    new Bird("イチロー", 9),
+            //};
+
+            //foreach (Animal a in animals)
+            //{
+            //    //if(a is IPlayable b)
+            //    // {
+            //    a.Speak();
+            //    //
+            //}
+
+            //2.8.11
+            Console.WriteLine("登録する頭数を入力してください");
             int a = int.Parse(Console.ReadLine());
-            switch (a)
+
+            List<Animal> dog = new List<Animal>();
+            List<Animal> cat = new List<Animal>();
+            List<Animal> bird = new List<Animal>();
+
+            for (int i = 0; i < a; i++)
             {
-                case 1:
-                    Console.WriteLine("1:まぐろ→ 今日のあなたはリーダー運が好調です。積極的に行動しましょう！");
-                    break;
+                Console.WriteLine("種類、名称、年齢を入力してください");
+                string b = Console.ReadLine();
 
-                case 2:
-                    Console.WriteLine("2:えび→ 周囲との協力が運気アップの鍵です。困ったときは相談してみましょう！");
-                    break;
+                string[] c = b.Split();
 
-                case 3:
-                    Console.WriteLine("3:こはだ→ 新しい知識を身につけるのに最適な一日です。");
-                    break;
+                string type = c[0];
+                string name = c[1];
+                int age = int.Parse(c[2]);
 
-                case 4:
-                    Console.WriteLine("4:あなご→ 焦らずゆっくり進めることで良い結果につながります。");
-                    break;
+                if(type == "Dog")
+                {
+                    dog.Add();
+                }
 
-                case 5:
-                    Console.WriteLine("5:いくら→ 思わぬ幸運が舞い込むかもしれません。チャンスを逃さないようにしましょう！");
-                    break;
             }
+
+
+            //Console.WriteLine("お好きな寿司を選んでください");
+            //Console.WriteLine("1:まぐろ 2:えび 3:こはだ 4:あなご 5:いくら");
+
+            //int a = int.Parse(Console.ReadLine());
+            //switch (a)
+            //{
+            //    case 1:
+            //        Console.WriteLine("1:まぐろ→ 今日のあなたはリーダー運が好調です。積極的に行動しましょう！");
+            //        break;
+
+            //    case 2:
+            //        Console.WriteLine("2:えび→ 周囲との協力が運気アップの鍵です。困ったときは相談してみましょう！");
+            //        break;
+
+            //    case 3:
+            //        Console.WriteLine("3:こはだ→ 新しい知識を身につけるのに最適な一日です。");
+            //        break;
+
+            //    case 4:
+            //        Console.WriteLine("4:あなご→ 焦らずゆっくり進めることで良い結果につながります。");
+            //        break;
+
+            //    case 5:
+            //        Console.WriteLine("5:いくら→ 思わぬ幸運が舞い込むかもしれません。チャンスを逃さないようにしましょう！");
+            //        break;
+            //}
         }
         static int Calc(int x, int y)
             {

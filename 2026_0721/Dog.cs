@@ -11,12 +11,12 @@
         mAge = age;
         mKensyu = kensyu;
     }
-    //public int Age
-    //{
-    //    get { return mAge; }
-    //    set { mAge = value; }
-   // }
-     public void ShowProfile()
+    public int Age
+    {
+        get { return mAge; }
+        set { mAge = value; }
+    }
+    public void ShowProfile()
     {
       Console.WriteLine($"犬の名前は{mName}です");
       Console.WriteLine($"年齢は{mAge}才です");
