@@ -5,10 +5,10 @@
         : base(name, age)   //Animal のコンストラクタを呼ぶ
     {
     }
-    //public void Sleep()
-    //{
-    //    Console.WriteLine("スースー");
-    //}
+    public void Sleep()
+    {
+        Console.WriteLine("スースー");
+    }
 
     public override void Speak()
     {
