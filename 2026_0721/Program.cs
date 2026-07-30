@@ -1,10 +1,15 @@
 ﻿using School;
 using System.ComponentModel.Design;
+using System.Diagnostics.Contracts;
 using System.Net.Http.Headers;
 using System.Reflection;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.CompilerServices;
 using System.Xml.Linq;
+using System.IO;
+using System.Reflection.Metadata;
+using System.IO.Enumeration;
+using System.Text;
 
 namespace _2026_0721
 {
@@ -727,6 +732,7 @@ namespace _2026_0721
 
             //5.1.1
 
+
             //using (StreamWriter sw = new StreamWriter("output.txt"))
             //{
             //    sw.WriteLine("こんにちは");
@@ -735,21 +741,165 @@ namespace _2026_0721
             //}
             //Console.WriteLine("書き込みが完了しました");
 
-            //5.2.2.
-            using (StreamReader sr = new StreamReader("output.txt"))
+            //5.2.1
+            //using (StreamReader sr = new StreamReader("output.txt"))
+            //{
+            //    string Line;
+
+            //    for (int i = 0; i < 3; i++)
+            //    {
+            //        Line = sr.ReadLine();
+            //        Console.WriteLine(Line);
+            //    }
+
+            //}
+
+            //5.3.1
+            //string filePath = "append.txt";
+            //string path = "append.txt";
+            //string memo = "買い物";
+            //string Line = $"{DateTime.Now:yyyy/MM/dd HH:mm}:{memo}";
+
+            //using (StreamWriter sw = new StreamWriter(path, append: true))
+            //{
+            //    sw.WriteLine(Line);
+            //}
+            ////5.3.2
+            //using (StreamWriter sw = new StreamWriter(path, append: false))
+            //{
+            //    sw.WriteLine("初期化しました");
+            //}
+
+            //string[] lines = File.ReadAllLines(path);
+
+            //for (int i = 0; i < lines.Length; i++)
+            //{
+            //    Console.WriteLine($"{i + 1}: {lines[i]}");
+            //}
+
+            //5.4.1
+
+            //Console.WriteLine("読み込みたいファイル名を入力してください");
+            //string a = Console.ReadLine();
+
+            //if(!File.Exists(a))
+            //{
+            //    Console.WriteLine("存在しません");
+            //    return;
+            //}
+            //try
+            //{
+            //    string[] lines = File.ReadAllLines(a);
+
+            //    for (int i = 0; i < lines.Length; i++)
+            //    {
+            //        Console.WriteLine($"{i + 1}: {lines[i]}");
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    Console.WriteLine("読み込み中にエラーが発生しました");
+            //    Console.WriteLine(ex.Message);
+
+            //}
+
+            //5.5.1
+            //string directoryPath = Path.Combine("data", "logs");
+            //Directory.CreateDirectory(directoryPath);
+
+            //string filePath = Path.Combine(directoryPath, "today.txt");
+
+            //using(StreamWriter sw = new StreamWriter(filePath))
+            //{
+            //    sw.WriteLine("aa");
+            //}
+
+            //5.5.2
+
+            //string a = "data";
+            //string[] b = Directory.GetFiles(a);
+            //if(b.Length == 0)
+            //{
+            //    Console.WriteLine("ファイルなし");
+            //}
+            //foreach(string c in b)
+            //{
+            //    FileInfo info = new FileInfo(c);
+            //    Console.WriteLine(info.Name);
+            //    Console.WriteLine(info.Length);
+            //    Console.WriteLine(info.CreationTime);
+            //}
+
+            //5.6.1
+
+            //string a = "quick.txt";
+
+            //string[] data =
+            //{
+            //    "一行目",
+            //    "二行目",
+            //    "三行目",
+            //};
+
+            //File.WriteAllLines(a ,data);
+            //string[] c = File.ReadAllLines(a);
+
+            //for(int i = 0; i < c.Length; i++)
+            //{
+            //    Console.WriteLine($"{i+1}:{c[i]}");
+            //}
+
+            //5.7.1
+            //Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            //string u = "Users.csv";
+            //string users = Console.ReadLine();
+            //File.AppendAllText(u, users + Environment.NewLine,Encoding.GetEncoding("Shift_jis"));
+            //using (StreamReader sr = new StreamReader(u))
+            //{
+            //    string[] a = File.ReadAllLines(u, Encoding.GetEncoding("Shift_jis"));
+
+            //    foreach (string b in a)
+            //    {
+            //        string[] c = b.Split(',');
+
+            //        if (c.Length != 2)
+            //        {
+            //            Console.WriteLine("想定外の列数です");
+            //        }
+
+            //        string d = c[0];
+            //        string e = c[1];
+
+            //        Console.WriteLine($"Name={d},Age={e}");
+            //    }
+            //}
+
+            //5.7.2
+
+            string path = "users.csv";
+
+            string name;
+            int age;
+
+            Console.Write("Name を入力してください：");
+            name = Console.ReadLine();
+
+            while (true)
             {
-                string Line;
-
-                for (int i = 0; i < 3; i++)
+                Console.Write("Age を入力してください：");
+                string input = Console.ReadLine();
+                if (int.TryParse(input, out age))
                 {
-                    Line = sr.ReadLine();
-                    Console.WriteLine(Line);
+                    break;  
                 }
-                
+                Console.WriteLine("Age は整数で入力してください");
             }
-
-            //
-
+            using (StreamWriter sw = new StreamWriter(path, append: true))
+            {
+                sw.WriteLine($"{name},{age}");
+            }
+            Console.WriteLine("CSV に追記しました");
+       
             //Console.WriteLine("お好きな寿司を選んでください");
             //Console.WriteLine("1:まぐろ 2:えび 3:こはだ 4:あなご 5:いくら");
 
