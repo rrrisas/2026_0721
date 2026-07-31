@@ -16,7 +16,7 @@ using System.Text;
     
     public override string ToString()
     {
-        Console.WriteLine();
+        return$"";
     }
 
 

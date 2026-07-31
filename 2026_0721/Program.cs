@@ -1,5 +1,4 @@
-﻿using School;
-using System.ComponentModel.Design;
+﻿using System.ComponentModel.Design;
 using System.Diagnostics.Contracts;
 using System.Net.Http.Headers;
 using System.Reflection;
@@ -10,6 +9,7 @@ using System.IO;
 using System.Reflection.Metadata;
 using System.IO.Enumeration;
 using System.Text;
+using System.Linq.Expressions;
 
 namespace _2026_0721
 {
@@ -876,30 +876,129 @@ namespace _2026_0721
 
             //5.7.2
 
-            string path = "users.csv";
+            //string path = "users.csv";
 
-            string name;
-            int age;
+            //string name;
+            //int age;
 
-            Console.Write("Name を入力してください：");
-            name = Console.ReadLine();
+            //Console.Write("Name を入力してください：");
+            //name = Console.ReadLine();
 
-            while (true)
+            //while (true)
+            //{
+            //    Console.Write("Age を入力してください：");
+            //    string input = Console.ReadLine();
+            //    if (int.TryParse(input, out age))//int.TryParseはintかどうか確かめる
+            //    {
+            //        break;  
+            //    }
+            //    Console.WriteLine("Age は整数で入力してください");
+            //}
+            //using (StreamWriter sw = new StreamWriter(path, append: true))
+            //{
+            //    sw.WriteLine($"{name},{age}");
+            //}
+            //Console.WriteLine("CSV に追記しました");
+
+            //5.8.1
+
+            //List<User> users = new List<User>();
+            //foreach(var a in File.ReadLines("users.csv")) 
+            //{
+            //    var s = a.Split(',');
+            //    string name = s[0];
+            //    int age = int.Parse(s[1]);
+
+            //    users.Add(new User(name, age));
+            //}
+
+            //Console.WriteLine("すべてのユーザー");
+
+            //foreach (User c in users)
+            //{
+            //    Console.WriteLine(c);
+            //}
+
+            //Console.WriteLine("降順");
+
+            //var sortedNumbers = users.OrderByDescending(i => i);
+
+            //Console.WriteLine(string.Join(",",sortedNumbers));
+
+            //5.9.1
+            //const int nameWidth = 20;
+            //const int ageWidth = 5;
+
+            //Console.WriteLine($"{"Name".PadRight(nameWidth)} {"Age".PadLeft(ageWidth)}");
+
+            //Console.WriteLine(new string('-', nameWidth + ageWidth + 1));
+            //foreach (var u in users)
+            //{
+            //    Console.WriteLine(
+            //        $"{u.Name.PadRight(nameWidth)} {u.Age.ToString().PadLeft(ageWidth)}"
+            //    );
+            //}
+
+            //5.10.1
+
+            //string path = "utf8.txt";
+
+            //using (var sw = new StreamWriter(path, append: false, Encoding.UTF8))
+            //{
+            //    sw.WriteLine("こんにちは");
+            //    sw.WriteLine("UTF");
+            //    sw.WriteLine("C#");
+            //}
+
+            //Console.WriteLine("書き込み完了");
+
+            //using (var sr = new StreamReader(path, Encoding.UTF8))
+            //{
+            //    Console.WriteLine(" 読み込み結果 ");
+            //    string line;
+            //    while ((line = sr.ReadLine()) != null)
+            //    {
+            //        Console.WriteLine(line);
+            //    }
+            //}
+
+            //5.11
+
+            //Logger.Log("起動しました");
+
+            //try
+            //{
+
+            //    Logger.Log("ユーザー登録成功");
+
+            //    throw new Exception("データベース接続エラー");
+            //}
+            //catch (Exception ex)
+            //{
+            //    Logger.Log("ERROR: " + ex.Message);
+            //}
+            //finally
+            //{
+            //    Logger.Log("終了します");
+            //}
+
+            //6.1.1.2
+            List<int> a = new List<int>();
+            int c = 0;
+            for (int i = 0; i < 5; i++)
             {
-                Console.Write("Age を入力してください：");
-                string input = Console.ReadLine();
-                if (int.TryParse(input, out age))
-                {
-                    break;  
-                }
-                Console.WriteLine("Age は整数で入力してください");
+                Console.WriteLine("数字を入力してください");
+                int b =  int.Parse(Console.ReadLine());
+                a.Add(b);
+                c += b;
             }
-            using (StreamWriter sw = new StreamWriter(path, append: true))
+            Console.WriteLine("合計");
+            Console.WriteLine(c);
+            foreach (int d in a)
             {
-                sw.WriteLine($"{name},{age}");
+                Console.WriteLine("追加した整数");
+                Console.WriteLine(d);
             }
-            Console.WriteLine("CSV に追記しました");
-       
             //Console.WriteLine("お好きな寿司を選んでください");
             //Console.WriteLine("1:まぐろ 2:えび 3:こはだ 4:あなご 5:いくら");
 
@@ -928,37 +1027,63 @@ namespace _2026_0721
             //}
         }
 
-        public static void CheckAge(int age)
-        {
-            if(age < 0 || age >= 120)
-            {
-               throw new ArgumentOutOfRangeException();
-            }
-            else
-            {
-                Console.WriteLine($"年齢は{age}歳です");
-                  
-            }
-        }
-        
-        struct Point
-        {
-            public int x {  get; set; } 
-            public int y {  get; set; }
 
-            public void ShowPoint()
+        //class Logger
+        //{
+        //    private static readonly string dir = "logs";
+        //    private static readonly string path = Path.Combine(dir, "app.log");
+
+        //    public static void Log(string message)
+        //    {
+        //        try
+        //        {
+        //            if (!Directory.Exists(dir))
+        //            {
+        //                Directory.CreateDirectory(dir);
+        //            }
+        //            string line = $"{DateTime.Now:yyyy-MM-ddTHH:mm:ss} {message}";
+
+        //            using (var sw = new StreamWriter(path, append: true, Encoding.UTF8))
+        //            {
+        //                sw.WriteLine(line);
+        //            }
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            Console.WriteLine("ログ書き込み失敗: " + ex.Message);
+        //        }
+
+
+        public static void CheckAge(int age)
             {
-                Console.WriteLine($"x = {x} , y = {y}");
+                if (age < 0 || age >= 120)
+                {
+                    throw new ArgumentOutOfRangeException();
+                }
+                else
+                {
+                    Console.WriteLine($"年齢は{age}歳です");
+                }
             }
-        }
-        enum Season
-        {
-            Spring,
-            Summer,
-            Autumn,
-            Winter
-        }
-        static int Calc(int x, int y)
+
+            struct Point
+            {
+                public int x { get; set; }
+                public int y { get; set; }
+
+                public void ShowPoint()
+                {
+                    Console.WriteLine($"x = {x} , y = {y}");
+                }
+            }
+            enum Season
+            {
+                Spring,
+                Summer,
+                Autumn,
+                Winter
+            }
+            static int Calc(int x, int y)
             {
                 return (x + y);
             }
@@ -1058,9 +1183,9 @@ namespace _2026_0721
             }
 
             //static int CalcTax(int price, int a)
-           // {
-               // return (int)Math.Floor(price * 1.1);
-           // }
+            // {
+            // return (int)Math.Floor(price * 1.1);
+            // }
 
             //static int CalcDamage(int attac, int defense)
             //{
@@ -1289,101 +1414,102 @@ namespace _2026_0721
                 }
             }
 
-        static void Seisuu2()
-        {
-            int[] a = new int[10];
+            static void Seisuu2()
+            {
+                int[] a = new int[10];
 
-            for (int i = 0; i < 10; i++)
-            {
-                a[i] = int.Parse(Console.ReadLine());
-            }
-            for (int i = 0; i < 9; i++)
-            {
-                if (a[i] < a[i + 1])
+                for (int i = 0; i < 10; i++)
                 {
-                    int b = a[i];
-                    a[i] = a[i + 1];
-                    a[i + 1] = b;
+                    a[i] = int.Parse(Console.ReadLine());
                 }
-                Console.WriteLine(i);
-            }
-        }
-        static int Nijou(int x)
-        {
-            return x * x;
-        }
-
-        static int Avge(int x, int y)
-        {
-            return(x + y) / 2;
-        }
-
-        static int Max(int x, int y, int z)
-        {
-            return Math.Max(x,Math.Max(y, z));
-        }
-
-        static int Mma(int[] a)
-        {
-            int k = 0;
-           for(int i = 0; i < 4; i++)
-            {
-                if (a[i] > a[i + 1])
+                for (int i = 0; i < 9; i++)
                 {
-                    k = a[i];
+                    if (a[i] < a[i + 1])
+                    {
+                        int b = a[i];
+                        a[i] = a[i + 1];
+                        a[i + 1] = b;
+                    }
+                    Console.WriteLine(i);
                 }
             }
-           if(k < a[4])
+            static int Nijou(int x)
             {
-                k = a[4];
+                return x * x;
             }
-            return k;
-        }
 
-        static int Mi(int[] a)
-        {
-            int min = 0;
-            for(int i = 0; i < 5; i++)
+            static int Avge(int x, int y)
             {
-                if (a[min] > a[i])
+                return (x + y) / 2;
+            }
+
+            static int Max(int x, int y, int z)
+            {
+                return Math.Max(x, Math.Max(y, z));
+            }
+
+            static int Mma(int[] a)
+            {
+                int k = 0;
+                for (int i = 0; i < 4; i++)
                 {
-                    min = a[i];
+                    if (a[i] > a[i + 1])
+                    {
+                        k = a[i];
+                    }
                 }
+                if (k < a[4])
+                {
+                    k = a[4];
+                }
+                return k;
             }
-            return min;
-        }
 
-        static int Avge(int[]a)
-        {
-            int b = 0;
-            for (int i = 0; i< 5; i++)
+            static int Mi(int[] a)
             {
-                b += a[i];
+                int min = 0;
+                for (int i = 0; i < 5; i++)
+                {
+                    if (a[min] > a[i])
+                    {
+                        min = a[i];
+                    }
+                }
+                return min;
             }
-            return b / 5;
-        }
 
+            static int Avge(int[] a)
+            {
+                int b = 0;
+                for (int i = 0; i < 5; i++)
+                {
+                    b += a[i];
+                }
+                return b / 5;
+            }
+
+        
     }
-}
-namespace School
-{
-    class Teacher
+    namespace School
     {
-        public string name {  get; set; }
-
-        public void ShowProfile()
+        class Teacher
         {
-            Console.WriteLine($"Teacher: {name}");
+            public string name { get; set; }
+
+            public void ShowProfile()
+            {
+                Console.WriteLine($"Teacher: {name}");
+            }
         }
-    }
 
-    class Student
-    {
-        public string name { get; set; }
-
-        public void ShowProfile()
+        class Student
         {
-            Console.WriteLine($"Student: {name}");
+            public string name { get; set; }
+
+            public void ShowProfile()
+            {
+                Console.WriteLine($"Student: {name}");
+            }
         }
     }
 }
