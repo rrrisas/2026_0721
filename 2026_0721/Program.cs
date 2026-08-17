@@ -530,6 +530,7 @@ namespace _2026_0721
             //p.y = 10;
             //p.ShowPoint();
 
+            //M2_4_5();
 
             //3.4.1
 
@@ -983,22 +984,22 @@ namespace _2026_0721
             //}
 
             //6.1.1.2
-            List<int> a = new List<int>();
-            int c = 0;
-            for (int i = 0; i < 5; i++)
-            {
-                Console.WriteLine("数字を入力してください");
-                int b =  int.Parse(Console.ReadLine());
-                a.Add(b);
-                c += b;
-            }
-            Console.WriteLine("合計");
-            Console.WriteLine(c);
-            foreach (int d in a)
-            {
-                Console.WriteLine("追加した整数");
-                Console.WriteLine(d);
-            }
+            //List<int> a = new List<int>();
+            //int c = 0;
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    Console.WriteLine("数字を入力してください");
+            //    int b =  int.Parse(Console.ReadLine());
+            //    a.Add(b);
+            //    c += b;
+            //}
+            //Console.WriteLine("合計");
+            //Console.WriteLine(c);
+            //foreach (int d in a)
+            //{
+            //    Console.WriteLine("追加した整数");
+            //    Console.WriteLine(d);
+            //}
             //Console.WriteLine("お好きな寿司を選んでください");
             //Console.WriteLine("1:まぐろ 2:えび 3:こはだ 4:あなご 5:いくら");
 
@@ -1025,6 +1026,18 @@ namespace _2026_0721
             //        Console.WriteLine("5:いくら→ 思わぬ幸運が舞い込むかもしれません。チャンスを逃さないようにしましょう！");
             //        break;
             //}
+
+            List<int> a = new List<int>();
+            for (int i = 0; i <5; i++)
+            {
+                int b = int.Parse(Console.ReadLine());
+                a.Add(b);
+            }
+            foreach(int c in a)
+            {
+                Console.WriteLine(c);   
+            }
+
         }
 
 
@@ -1488,7 +1501,41 @@ namespace _2026_0721
                 return b / 5;
             }
 
-        
+        public static void M2_4_5()
+        {
+            int b = 0;
+            int c = 0;
+            for (int i = 0; i < 99; i++)
+            {
+                Console.WriteLine($"ストライクの場合は１、ボールの場合は２を入力,ファウルの場合は３を入力");
+                int a = int.Parse(Console.ReadLine());
+
+                if (a == 1)
+                {
+                    b++;
+                }
+                if (b == 3)
+                {
+                    break;
+                }
+            else if(a == 2)
+                {
+                    c++;
+                }
+                if(c == 4)
+                {
+                    break;
+                }
+                else if(a == 3 && b < 2)
+                {
+                    b++;
+                }
+            }
+            Console.WriteLine($"{b}ストライク、{c}ボール");
+
+        }
+
+
     }
     namespace School
     {
@@ -1512,6 +1559,10 @@ namespace _2026_0721
             }
         }
     }
+
+        
+
+    
 }
 
 
