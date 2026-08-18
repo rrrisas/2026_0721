@@ -1,15 +1,17 @@
-﻿using System.ComponentModel.Design;
+﻿using _2026_0721.School;
+using System.ComponentModel.Design;
 using System.Diagnostics.Contracts;
+using System.IO;
+using System.IO.Enumeration;
+using System.Linq.Expressions;
 using System.Net.Http.Headers;
 using System.Reflection;
+using System.Reflection.Metadata;
 using System.Reflection.Metadata.Ecma335;
 using System.Runtime.CompilerServices;
-using System.Xml.Linq;
-using System.IO;
-using System.Reflection.Metadata;
-using System.IO.Enumeration;
 using System.Text;
-using System.Linq.Expressions;
+using System.Xml.Linq;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace _2026_0721
 {
@@ -1027,20 +1029,226 @@ namespace _2026_0721
             //        break;
             //}
 
-            List<int> a = new List<int>();
-            for (int i = 0; i <5; i++)
+            //6.1.1 2
+            //List<int> a = new List<int>();
+            ////int c = 0;
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    Console.WriteLine("リストに入れる数字を入力してください");
+            //    int b = int.Parse(Console.ReadLine());
+            //    a.Add(b);
+            //    // c += b;
+            //}
+            ////Console.WriteLine(c);
+            //Console.WriteLine("リストに格納された数字");
+            //foreach (int c in a)
+            //{
+            //    Console.WriteLine("______");
+            //    Console.WriteLine(c);
+            //}
+            //int total = 0;
+            //for (int i = 0; i < a.Count; i++)
+            //{
+            //    total += a[i];
+            //}
+
+            //Console.WriteLine($"合計：{total}");
+
+            //6.2.1
+            //List<string> apple = new List<string>();
+
+            //apple.Add("りんご");
+            //apple.Add("ばなな");
+            //apple.Add("みかん");
+
+            //foreach(string f in apple)
+            //{
+            //    Console.WriteLine("フルーツ");
+            //    Console.WriteLine(f);
+            //}
+            //Console.WriteLine("格納したいフルーツを入力してください");
+            //string d = Console.ReadLine();
+            //apple.Add(d);
+
+            //foreach (string e in apple)
+            //{
+            //    Console.WriteLine("フルーツリスト");
+            //    Console.WriteLine(e);
+            //}
+
+            //6.3.1
+
+            //Dictionary<string, int> Country = new Dictionary<string, int>();
+
+            //Country.Add("Japan",125);
+            //Country.Add("France", 67);
+            //Country.Add("USA", 331);
+
+            ////foreach(var C in Country)
+            ////{
+            ////    Console.WriteLine($"{C.Key}:{C.Value}");
+            ////}
+
+            ////6.3.2
+            //Console.WriteLine("検索したい国名を入力してください");
+            //string P = Console.ReadLine();
+
+            //if(Country.ContainsKey(P))
+            //{
+            //    Console.WriteLine($"{P}の人口は{Country[P]}万人です");
+            //}
+            //else
+            //{
+            //    Console.WriteLine("登録されていません");
+            //}
+
+            //6.4.1
+
+            //List<Student> students = new List<Student>();
+
+            //students.Add(new Student { Name = "A", Score = 85 });
+            //students.Add(new Student { Name = "B", Score = 95 });
+            //students.Add(new Student { Name = "C", Score = 100 });
+
+            //foreach (var a in students)
+            //{
+            //    Console.WriteLine($"{a.Name}:{a.Score}");
+            //}
+
+            //List<int> number = new List<int>();
+            //number.Add(1);
+            //number.Add(2);
+            //number.Add(3);
+            //number.Add(4);
+            //number.Add(5);
+
+            //var doubled = number.Select(n => n * 2);
+
+            //foreach (int a in doubled)
+            //{
+            //    Console.WriteLine(a);
+            //}
+
+            //6.5.1
+            //List<int> numbers = new List<int>();
+            //numbers.Add(1);
+            //numbers.Add(2);
+            //numbers.Add(3);
+            //numbers.Add(4);
+            //numbers.Add(5);
+            //numbers.Add(6);
+            //numbers.Add(7);
+            //numbers.Add(8);
+            //numbers.Add(9);
+
+            //var a = numbers.Where(n => n % 2 == 0);
+
+            //foreach (int y in a)
+            //{
+            //    Console.WriteLine(y);
+            //}
+
+            //6.5.2
+            //List<string> F = new List<string>();
+
+            //F.Add("banana");
+            //F.Add("apple");
+            //F.Add("cherry");
+            //F.Add("date");
+
+            //var b = F.OrderBy(n => n);
+
+            //foreach(string c in b)
+            //{
+            //    Console.WriteLine(c);
+            //}
+
+            //6.7.1
+            //List<int> Ave = new List<int> { 80, 92, 75, 60, 45};
+
+            //var a = Ave.Average();
+            //Console.WriteLine(a);
+
+            //6.7.2
+
+            //List<int> a = new List<int> { 80,92,75,60,45 };
+
+            //var b = a.Count(n => n >= 70);
+
+            //Console.WriteLine(b);
+
+            //6.8.1
+            //List<Student> a = new List<Student>();
+
+            //a.Add(new Student { Name = "A", Score = 85 });
+            //a.Add(new Student { Name = "B", Score = 45 });
+            //a.Add(new Student { Name = "C", Score = 98 });
+            //a.Add(new Student { Name = "As", Score = 9 });
+            //a.Add(new Student { Name = "AE", Score = 92 });
+
+            //var b = a.Where(n => n.Score >= 70 && n.Name.StartsWith("A"));
+
+            //foreach(var s in b)
+            //{
+            //    Console.WriteLine($"{s.Name}:{s.Score}");
+            //}
+
+            //6.9.1
+
+            //List<Student> st = new List<Student>();
+            //st.Add(new Student { Name = "Alice", Score = 80 });
+            //st.Add(new Student { Name = "Bob", Score = 75 });
+            //st.Add(new Student { Name = "Charlie", Score = 80 });
+            //st.Add(new Student { Name = "Dave", Score = 60 });
+
+            //var g = st.GroupBy(n => n.Score);
+
+            //foreach (var a in g)
+            //{
+            //    Console.WriteLine($"点数: {a.Key}");
+
+            //    foreach (var n in a)
+            //    {
+            //        Console.WriteLine($" {n.Name}");
+            //    }
+            //}
+
+            //6.10
+
+            List<Product> P = new List<Product>();
+
+            P.Add(new Product { Name = "キャベツ", Price = 100, Category = "野菜" });
+            P.Add(new Product { Name = "牛肉", Price = 1000, Category = "肉" });
+            P.Add(new Product { Name = "チョコ", Price = 10, Category = "お菓子" });
+            P.Add(new Product { Name = "キノコ", Price = 500, Category = "野菜" });
+            P.Add(new Product { Name = "豚肉", Price = 2000, Category = "肉" });
+
+            var a = P.Where(n => n.Price >= 1000);
+
+            Console.WriteLine("1000円以上の商品");
+            foreach (var b in a)
             {
-                int b = int.Parse(Console.ReadLine());
-                a.Add(b);
+                Console.WriteLine(b.Name);
             }
-            foreach(int c in a)
+
+            Console.WriteLine();
+
+            var d = P.GroupBy(n => n.Category);
+
+            foreach (var e in d)
             {
-                Console.WriteLine(c);   
+                Console.WriteLine($"{e.Count()}");
+            }
+
+            Console.WriteLine();
+
+            var f = P.OrderByDescending(n => n.Price);
+            foreach (var w in f)
+            {
+                Console.WriteLine(w.Name);
             }
 
         }
-
-
         //class Logger
         //{
         //    private static readonly string dir = "logs";
