@@ -1,6 +1,0 @@
-﻿interface IPlayable
-        {
-            void Play();
-        }
-    
-

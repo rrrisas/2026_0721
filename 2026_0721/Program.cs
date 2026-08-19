@@ -1061,7 +1061,7 @@ namespace _2026_0721
             //apple.Add("ばなな");
             //apple.Add("みかん");
 
-            //foreach(string f in apple)
+            //foreach (string f in apple)
             //{
             //    Console.WriteLine("フルーツ");
             //    Console.WriteLine(f);
@@ -1080,7 +1080,7 @@ namespace _2026_0721
 
             //Dictionary<string, int> Country = new Dictionary<string, int>();
 
-            //Country.Add("Japan",125);
+            //Country.Add("Japan", 125);
             //Country.Add("France", 67);
             //Country.Add("USA", 331);
 
@@ -1093,7 +1093,7 @@ namespace _2026_0721
             //Console.WriteLine("検索したい国名を入力してください");
             //string P = Console.ReadLine();
 
-            //if(Country.ContainsKey(P))
+            //if (Country.ContainsKey(P))
             //{
             //    Console.WriteLine($"{P}の人口は{Country[P]}万人です");
             //}
@@ -1158,20 +1158,20 @@ namespace _2026_0721
 
             //var b = F.OrderBy(n => n);
 
-            //foreach(string c in b)
+            //foreach (string c in b)
             //{
             //    Console.WriteLine(c);
             //}
 
             //6.7.1
-            //List<int> Ave = new List<int> { 80, 92, 75, 60, 45};
+            //List<int> Ave = new List<int> { 80, 92, 75, 60, 45 };
 
             //var a = Ave.Average();
             //Console.WriteLine(a);
 
             //6.7.2
 
-            //List<int> a = new List<int> { 80,92,75,60,45 };
+            //List<int> a = new List<int> { 80, 92, 75, 60, 45 };
 
             //var b = a.Count(n => n >= 70);
 
@@ -1188,7 +1188,7 @@ namespace _2026_0721
 
             //var b = a.Where(n => n.Score >= 70 && n.Name.StartsWith("A"));
 
-            //foreach(var s in b)
+            //foreach (var s in b)
             //{
             //    Console.WriteLine($"{s.Name}:{s.Score}");
             //}
@@ -1215,38 +1215,90 @@ namespace _2026_0721
 
             //6.10
 
-            List<Product> P = new List<Product>();
+            //List<Product> P = new List<Product>();
 
-            P.Add(new Product { Name = "キャベツ", Price = 100, Category = "野菜" });
-            P.Add(new Product { Name = "牛肉", Price = 1000, Category = "肉" });
-            P.Add(new Product { Name = "チョコ", Price = 10, Category = "お菓子" });
-            P.Add(new Product { Name = "キノコ", Price = 500, Category = "野菜" });
-            P.Add(new Product { Name = "豚肉", Price = 2000, Category = "肉" });
+            //P.Add(new Product { Name = "キャベツ", Price = 100, Category = "野菜" });
+            //P.Add(new Product { Name = "牛肉", Price = 1000, Category = "肉" });
+            //P.Add(new Product { Name = "チョコ", Price = 10, Category = "お菓子" });
+            //P.Add(new Product { Name = "キノコ", Price = 500, Category = "野菜" });
+            //P.Add(new Product { Name = "豚肉", Price = 2000, Category = "肉" });
 
-            var a = P.Where(n => n.Price >= 1000);
+            //var a = P.Where(n => n.Price >= 1000);
 
-            Console.WriteLine("1000円以上の商品");
-            foreach (var b in a)
+            //Console.WriteLine("1000円以上の商品");
+            //foreach (var b in a)
+            //{
+            //    Console.WriteLine(b.Name);
+            //}
+
+            //Console.WriteLine();
+
+            //var d = P.GroupBy(n => n.Category);
+
+            //foreach (var e in d)
+            //{
+            //    Console.WriteLine($"{e.Count()}");
+            //}
+
+            //Console.WriteLine();
+
+            //var f = P.OrderByDescending(n => n.Price);
+            //foreach (var w in f)
+            //{
+            //    Console.WriteLine(w.Name);
+            //}
+
+            //7.1.1//7.2.1
+
+            //List<Employee> salary = new List<Employee>();
+
+            //salary.Add(new PartTimeEmployee { Name = "A", Type = "アルバイト", HourlyWage = 3000, WorkedHours = 10 });
+            //salary.Add(new FullTimeEmployee { Name = "B", Type = "正社員", BaseSalary = 350000, OvertimeHours = 10 });
+            //salary.Add(new PartTimeEmployee { Name = "C", Type = "アルバイト", HourlyWage = 5000, WorkedHours = 12 });
+            //salary.Add(new FullTimeEmployee { Name = "D", Type = "正社員", BaseSalary = 100000, OvertimeHours = 5 });
+
+            //foreach (var t in salary)
+            //{
+            //    t.ShowProfile();
+
+            //    Console.WriteLine($"月給は: {t.CalculateMonthlyPay()} 円です");
+            //    Console.WriteLine();
+            //}
+
+            //7.4.1
+
+            List<IReportable> a = new List<IReportable>();
+
+            a.Add(new PartTimeEmployee { Name = "A", Type = "アルバイト", HourlyWage = 3000, WorkedHours = 10 });
+            a.Add(new FullTimeEmployee { Name = "B", Type = "正社員", BaseSalary = 350000, OvertimeHours = 10, ITaxStrategy = 20000});
+            a.Add(new PartTimeEmployee { Name = "C", Type = "アルバイト", HourlyWage = 5000, WorkedHours = 12 });
+            a.Add(new FullTimeEmployee { Name = "D", Type = "正社員", BaseSalary = 100000, OvertimeHours = 5, ITaxStrategy = 20000});
+
+            foreach (var c in a)
             {
-                Console.WriteLine(b.Name);
+                Console.WriteLine(c.GenerateReport());
             }
 
-            Console.WriteLine();
+            //7.6
+            //Employee emp = new FullTimeEmployee();
 
-            var d = P.GroupBy(n => n.Category);
+            //emp.CalculateMonthlyPay();
 
-            foreach (var e in d)
-            {
-                Console.WriteLine($"{e.Count()}");
-            }
+            //7.7.1
 
-            Console.WriteLine();
+            //var emp = new FullTimeEmployee
+            //{
+            //    Name = "佐藤",
+            //    Type = "正社員",
+            //    BaseSalary = 300000,
+            //    OvertimeHours = 10
+            //};
 
-            var f = P.OrderByDescending(n => n.Price);
-            foreach (var w in f)
-            {
-                Console.WriteLine(w.Name);
-            }
+            //emp.MonthlyRoutine();
+
+            //7.8.1
+
+
 
         }
         //class Logger
