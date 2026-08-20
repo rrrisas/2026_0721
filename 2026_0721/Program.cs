@@ -1,4 +1,4 @@
-﻿using _2026_0721.School;
+﻿
 using System.ComponentModel.Design;
 using System.Diagnostics.Contracts;
 using System.IO;
@@ -1265,19 +1265,19 @@ namespace _2026_0721
             //    Console.WriteLine();
             //}
 
-            //7.4.1
+            //7.4.1.7.7.1/7.7.8
 
-            List<IReportable> a = new List<IReportable>();
+            //List<IReportable> a = new List<IReportable>();
 
-            a.Add(new PartTimeEmployee { Name = "A", Type = "アルバイト", HourlyWage = 3000, WorkedHours = 10 });
-            a.Add(new FullTimeEmployee { Name = "B", Type = "正社員", BaseSalary = 350000, OvertimeHours = 10, ITaxStrategy = 20000});
-            a.Add(new PartTimeEmployee { Name = "C", Type = "アルバイト", HourlyWage = 5000, WorkedHours = 12 });
-            a.Add(new FullTimeEmployee { Name = "D", Type = "正社員", BaseSalary = 100000, OvertimeHours = 5, ITaxStrategy = 20000});
+            //a.Add(new PartTimeEmployee { Name = "A", Type = "アルバイト", HourlyWage = 3000, WorkedHours = 10 });
+            //a.Add(new FullTimeEmployee { Name = "B", Type = "正社員", BaseSalary = 350000, OvertimeHours = 10, ITaxStrategy = 20000});
+            //a.Add(new PartTimeEmployee { Name = "C", Type = "アルバイト", HourlyWage = 5000, WorkedHours = 12 });
+            //a.Add(new FullTimeEmployee { Name = "D", Type = "正社員", BaseSalary = 100000, OvertimeHours = 5, ITaxStrategy = 10000});
 
-            foreach (var c in a)
-            {
-                Console.WriteLine(c.GenerateReport());
-            }
+            //foreach (var c in a)
+            //{
+            //    Console.WriteLine(c.GenerateReport());
+            //}
 
             //7.6
             //Employee emp = new FullTimeEmployee();
@@ -1296,11 +1296,475 @@ namespace _2026_0721
 
             //emp.MonthlyRoutine();
 
-            //7.8.1
+            //7.8,1
+
+            //var emp = new FullTimeEmployee
+            //{
+            //    Name = "A",
+            //    Type = "正社員",
+            //    BaseSalary = 300000
+            //};
+
+            //Console.WriteLine("一律10%課税");
+            //emp.TaxStrategy = new FlatTaxStrategy();
+            //Console.WriteLine($"手取り：{emp.CalculateMonthlyPay()} 円");
+
+            //Console.WriteLine();
+
+            //Console.WriteLine("段階税率課税SSS");
+            //emp.TaxStrategy = new ProgressiveTaxStrategy();
+            //Console.WriteLine($"手取り：{emp.CalculateMonthlyPay()} 円");
+
+            //7.9.1
+
+            //List<IPayable> a = new List<IPayable>();
+
+            //a.Add(new PartTimeEmployee { Name = "A", Type = "アルバイト", HourlyWage = 3000, WorkedHours = 10, TaxStrategy = new ProgressiveTaxStrategy() });
+            //a.Add(new FullTimeEmployee { Name = "B", Type = "正社員", BaseSalary = 350000, OvertimeHours = 10, TaxStrategy = new FlatTaxStrategy() });
+            //a.Add(new PartTimeEmployee { Name = "C", Type = "アルバイト", HourlyWage = 5000, WorkedHours = 12 , TaxStrategy = new ProgressiveTaxStrategy() });
+            //a.Add(new FullTimeEmployee { Name = "D", Type = "正社員", BaseSalary = 100000, OvertimeHours = 5, TaxStrategy = new FlatTaxStrategy() });
+
+            //foreach(var b in a)
+            //{
+            //    b.Pay();
+            //}
+
+            //7.10.1
+            //List<Employee> employees = new List<Employee>();
+
+            //while (true)
+            //{
+            //    Console.WriteLine("１：社員追加");
+            //    Console.WriteLine("２：残業登録");
+            //    Console.WriteLine("３：税方式切り替え");
+            //    Console.WriteLine("４：月次処理");
+            //    Console.WriteLine("５：明細表示");
+            //    Console.WriteLine("６：終了");
+
+            //    int c = int.Parse(Console.ReadLine());
+
+            //    switch (c)
+            //    {
+            //        case 1:
+            //            Console.WriteLine("名前を入力してください");
+            //            string na = Console.ReadLine();
+
+            //            Console.WriteLine("種別を入力してください（正社員 / アルバイト）");
+            //            string ty = Console.ReadLine();
+
+            //            if (ty == "正社員")
+            //            {
+            //                Console.WriteLine("基本給を入力してください");
+            //                decimal salary = decimal.Parse(Console.ReadLine());
+
+            //                employees.Add(new FullTimeEmployee
+            //                {
+            //                    Name = na,
+            //                    Type = "正社員",
+            //                    BaseSalary = salary,
+            //                    TaxStrategy = new FlatTaxStrategy()
+            //                });
+
+            //                Console.WriteLine($"{na}さん（正社員）を登録しました");
+            //            }
+            //            else if (ty == "アルバイト")
+            //            {
+            //                Console.WriteLine("勤務時間を入力してください");
+            //                int hours = int.Parse(Console.ReadLine());
+
+            //                Console.WriteLine("時給を入力してください");
+            //                decimal rate = decimal.Parse(Console.ReadLine());
+
+            //                employees.Add(new PartTimeEmployee
+            //                {
+            //                    Name = na,
+            //                    Type = "アルバイト",
+            //                    WorkedHours = hours,
+            //                    HourlyWage = rate,
+            //                    TaxStrategy = new FlatTaxStrategy()
+            //                });
+
+            //                Console.WriteLine($"{na}さん（アルバイト）を登録しました");
+            //            }
+            //            else
+            //            {
+            //                Console.WriteLine("正社員とアルバイト以外は登録できません");
+            //            }
+            //            break;
+
+            //        case 2:
+            //            Console.WriteLine("残業時間を登録する名前を入力してください");
+            //            string namei = Console.ReadLine();
+
+            //            var emp = employees.Find(e => e.Name == namei);
+
+            //            if (emp == null)
+            //            {
+            //                Console.WriteLine("登録されていない名前です");
+            //                break;
+            //            }
+
+            //            if (emp is IOvertimeEligible ot)
+            //            {
+            //                Console.WriteLine("残業時間を入力してください");
+            //                int overT = int.Parse(Console.ReadLine());
+            //                ot.AddOvertimeHours(overT);
+            //                Console.WriteLine("残業時間を登録しました");
+            //            }
+            //            else
+            //            {
+            //                Console.WriteLine("アルバイトは残業時間を登録できません");
+            //            }
+            //            break;
+
+            //        case 3:
+            //            Console.WriteLine("全員分の税方式を変更：１、個人の税方式を変更：２");
+            //            int num = int.Parse(Console.ReadLine());
+
+            //            if (num == 1)
+            //            {
+            //                Console.WriteLine("一律課税：１、段階課税：２");
+            //                int taxnum = int.Parse(Console.ReadLine());
+
+            //                ITaxStrategy strategy =
+            //                    taxnum == 1 ? new FlatTaxStrategy() : new ProgressiveTaxStrategy();
+
+            //                foreach (var e in employees)
+            //                    e.TaxStrategy = strategy;
+
+            //                Console.WriteLine("全員の税方式を変更しました");
+            //            }
+            //            else if (num == 2)
+            //            {
+            //                Console.WriteLine("名前を入力してください");
+            //                string namei2 = Console.ReadLine();
+
+            //                var emp2 = employees.Find(e => e.Name == namei2);
+
+            //                if (emp2 == null)
+            //                {
+            //                    Console.WriteLine("登録されていない名前です");
+            //                    break;
+            //                }
+
+            //                Console.WriteLine("一律課税：１、段階課税：２");
+            //                int taxnum2 = int.Parse(Console.ReadLine());
+
+            //                emp2.TaxStrategy =
+            //                    taxnum2 == 1 ? new FlatTaxStrategy() : new ProgressiveTaxStrategy();
+
+            //                Console.WriteLine($"{namei2}さんの税方式を変更しました");
+            //            }
+            //            break;
+
+            //        case 4:
+            //            Console.WriteLine("月次処理開始");
+            //            Console.WriteLine("-----------------");
+            //            foreach (var e in employees)
+            //            {
+            //                e.MonthlyRoutine();
+
+            //                if (e is IPayable payable)
+            //                {
+            //                    payable.Pay();
+            //                }
+            //            }
+            //            Console.WriteLine("-------------------");
+            //            Console.WriteLine("月次処理終了");
+            //            break;
+
+            //        case 5:
+            //            Console.WriteLine("明細を表示する名前を入力してください");
+            //            string nam = Console.ReadLine();
+            //            var em = employees.Find(e => e.Name == nam);
+
+            //            if (em == null)
+            //            {
+            //                Console.WriteLine("登録されていない名前です");
+            //                break;
+            //            }
+
+            //            if (em is IReportable reportable)
+            //            {
+            //                reportable.GenerateReport();
+            //            }
+            //            else
+            //            {
+            //                Console.WriteLine($"{nam}さんは明細を表示できません");
+            //            }
+
+            //            break;
+
+            //        case 6:
+            //            Console.WriteLine("終了します");
+            //            return;
+            //    }
+            //}
+
+            //8.1
+            //try 
+            //{ 
+
+            //Console.WriteLine("数字を入力してください");
+
+            //int num1 = int.Parse(Console.ReadLine());
+
+            //Console.WriteLine("演算子（+,-,*,/)を入力してください");
+
+            //string e = Console.ReadLine();
+
+            //Console.WriteLine("数字を入力してください");
+
+            //int num2 = int.Parse(Console.ReadLine());
+
+            //if(e == "+")
+            //{
+            //    Console.WriteLine("計算結果:"　+ num1 + num2);
+            //}
+            //else if (e == "-")
+            //{
+            //    Console.WriteLine("計算結果:" + (num1 - num2));
+            //}
+            //else if (e == "*")
+            //{
+            //    Console.WriteLine("計算結果:" + num1 * num2);
+            //}
+            //else if (e == "/")
+            //{
+            //    Console.WriteLine("計算結果:" + num1 / num2);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("不正な演算子です");
+            //}
+            //}
+            //catch (ArithmeticException)
+            //{
+            //    Console.WriteLine("0で割ることはできません");
+            //}
+            //catch(FormatException)
+            //{
+            //    Console.WriteLine("数字を入力してください");
+            //}
+
+            //8.2
+            //単語格納リスト
+
+            //Dictionary<string, string> word = new Dictionary<string, string>();
+
+            //while (true)
+            //{
+
+            //    Console.WriteLine("1:単語を登録");
+            //    Console.WriteLine("2:一覧表示");
+            //    Console.WriteLine("3:検索");
+
+            //    int num = int.Parse(Console.ReadLine());
+
+            //    switch (num)
+            //    {
+            //        //単語の登録
+            //        case 1:
+            //            Console.WriteLine("単語を入力してください");
+            //            string word1 = Console.ReadLine();
+            //            Console.WriteLine("単語の意味を入力してください");
+            //            string word2 = Console.ReadLine();
+
+            //            //リストに追加
+            //            word.Add(word1, word2);
+
+            //            Console.WriteLine("単語を登録しました");
+
+            //            break;
+            //        //単語の一覧表示
+            //        case 2:
+
+            //            Console.WriteLine("登録されている単語一覧");
+            //            foreach(var W in word)
+            //            {
+            //                Console.WriteLine($"単語：{W.Key}、意味：{W.Value}");
+            //            }
+
+            //            break;
+            //        //単語の検索
+            //        case 3:
+
+            //            Console.WriteLine("検索する単語を入力してください");
+
+            //            string word3 = Console.ReadLine();
+
+            //            string Serchkey = word3;
+
+            //            if(word.ContainsKey(Serchkey))
+            //            {
+            //                Console.WriteLine($"単語：{Serchkey}、意味：{word[Serchkey]}");
+            //            }
+            //            else
+            //            {
+            //                Console.WriteLine("単語が登録されていません");
+            //            }
+
+            //            break;
+            //    }
+            //}
+
+            //    Dictionary<string, string> word = LoadCsv();
+
+            //    while (true)
+            //    {
+            //        Console.WriteLine("1:単語を登録");
+            //        Console.WriteLine("2:一覧表示");
+            //        Console.WriteLine("3:検索");
+            //        Console.WriteLine("4:終了（CSV保存）");
+
+            //        int num = int.Parse(Console.ReadLine());
+
+            //        switch (num)
+            //        {
+            //            case 1:
+            //                Console.WriteLine("単語を入力してください");
+            //                string word1 = Console.ReadLine();
+            //                Console.WriteLine("単語の意味を入力してください");
+            //                string word2 = Console.ReadLine();
+
+            //                word[word1] = word2;
+            //                Console.WriteLine("単語を登録しました");
+            //                break;
+
+            //            case 2:
+            //                Console.WriteLine("登録されている単語一覧");
+            //                foreach (var W in word)
+            //                {
+            //                    Console.WriteLine($"単語：{W.Key}、意味：{W.Value}");
+            //                }
+            //                break;
+
+            //            case 3:
+            //                Console.WriteLine("検索する単語を入力してください");
+            //                string Serchkey = Console.ReadLine();
+
+            //                if (word.ContainsKey(Serchkey))
+            //                {
+            //                    Console.WriteLine($"単語：{Serchkey}、意味：{word[Serchkey]}");
+            //                }
+            //                else
+            //                {
+            //                    Console.WriteLine("単語が登録されていません");
+            //                }
+            //                break;
+
+            //            case 4:
+            //                SaveCsv(word);
+            //                return;
+            //        }
+            //    }
+            //}
+
+            //static void SaveCsv(Dictionary<string, string> word)
+            //{
+            //    using (var sw = new StreamWriter("word.csv"))
+            //    {
+            //        foreach (var w in word)
+            //        {
+            //            sw.WriteLine($"{w.Key},{w.Value}");
+            //        }
+            //    }
+            //    Console.WriteLine("CSVに保存しました");
+            //}
+
+            //static Dictionary<string, string> LoadCsv()
+            //{
+            //    var word = new Dictionary<string, string>();
+
+            //    if (!File.Exists("word.csv"))
+            //        return word;
+
+            //    foreach (var line in File.ReadAllLines("word.csv"))
+            //    {
+            //        var parts = line.Split(',');
+            //        if (parts.Length == 2)
+            //        {
+            //            word[parts[0]] = parts[1];
+            //        }
+            //    }
+
+            //    Console.WriteLine("CSVを読み込みました");
+            //    return word;
+            //}
 
 
+            //8.3
+            //リスト作成
+            //List<Product> name = new List<Product>();
+            //name.Add(new Product { Name = "人参", Price = 100, Category = "野菜" });
+            //name.Add(new Product { Name = "鶏肉", Price = 500, Category = "肉" });
+            //name.Add(new Product { Name = "じゃがりこ", Price = 150, Category = "お菓子" });
+            //name.Add(new Product { Name = "牛乳", Price = 200, Category = "飲み物" });
+
+            ////商品一覧表示
+            //Console.WriteLine("商品一覧");
+            //foreach (var pr in name)
+            //{
+            //    Console.WriteLine($"商品名：{pr.Name}、価格：{pr.Price}円、カテゴリー：{pr.Category}");
+            //}
+            //Console.WriteLine();
+
+            ////価格高い順
+            //var order = name.OrderByDescending(p => p.Price);
+            //Console.WriteLine("価格の高い順");
+
+            //foreach (var pri in order)
+            //{
+            //    Console.WriteLine($"商品名：{pri.Name}、価格：{pri.Price}円、カテゴリー：{pri.Category}");
+            //}
+            ////カテゴリごとにグループ化
+
+            //Console.WriteLine();
+            //var group = name.GroupBy(p => p.Category);
+            //Console.WriteLine("カテゴリごとにグループ化");
+
+            //foreach (var gr in group)
+            //{
+            //    Console.WriteLine($"カテゴリ：{gr.Key}");
+
+            //    foreach (var item in gr)
+            //    {
+            //        Console.WriteLine($"  商品名：{item.Name}、価格：{item.Price}円");
+            //    }
+            //}
+
+
+            //8.4
+
+            //本を登録するクラスを別で作る、タイトル著者貸出状況のプロパティ作る、それをリストにする
+            List<string> book = new List<string>();
+            while (true)
+            {
+                Console.WriteLine("1:本を登録");
+                Console.WriteLine("2:貸出");
+                Console.WriteLine("3:返却");
+                Console.WriteLine("4:一覧表示");
+
+                int library = int.Parse(Console.ReadLine());
+
+                switch (library)
+                {
+                    case 1:
+                //本の登録
+                Console.WriteLine("登録する本を入力してください");
+                        string a = Console.ReadLine();
+
+                       
+                        
+                        break;
+            }
+            }
 
         }
+
+    }
+}
+
         //class Logger
         //{
         //    private static readonly string dir = "logs";
@@ -1327,502 +1791,502 @@ namespace _2026_0721
         //        }
 
 
-        public static void CheckAge(int age)
-            {
-                if (age < 0 || age >= 120)
-                {
-                    throw new ArgumentOutOfRangeException();
-                }
-                else
-                {
-                    Console.WriteLine($"年齢は{age}歳です");
-                }
-            }
+        //public static void CheckAge(int age)
+        //    {
+        //        if (age < 0 || age >= 120)
+        //        {
+        //            throw new ArgumentOutOfRangeException();
+        //        }
+        //        else
+        //        {
+        //            Console.WriteLine($"年齢は{age}歳です");
+        //        }
+        //    }
 
-            struct Point
-            {
-                public int x { get; set; }
-                public int y { get; set; }
-
-                public void ShowPoint()
-                {
-                    Console.WriteLine($"x = {x} , y = {y}");
-                }
-            }
-            enum Season
-            {
-                Spring,
-                Summer,
-                Autumn,
-                Winter
-            }
-            static int Calc(int x, int y)
-            {
-                return (x + y);
-            }
-
-            static void mondai2_1_1()
-            {
-                Console.WriteLine("Hello, World!");
-            }
-            static void mondai2_1_2()
-            {
-                int x = 11;
-                Console.WriteLine($"x={x}");
-
-            }
-            static void mondai2_1_3()
-            {
-                int x = 13;
-                int y = 17;
-                Console.WriteLine($"x={x + y}");
-            }
-            static void mondai2_1_4()
-            {
-                Console.WriteLine(13 * 17);
-            }
-
-            static void mondai2_2_1()
-            {
-                string s = Console.ReadLine();
-                Console.WriteLine(s);
-            }
-
-            static void mondai2_2_2()
-            {
-                int x = int.Parse(Console.ReadLine());
-                Console.WriteLine(x);
-            }
-            static void mondai2_2_3(int x, int y)
-            {
-                Console.WriteLine((x + y) / 2);
-            }
-            static void mondai2_2_4(int x)
-            {
-                Console.WriteLine(x * 365);
-            }
-            static int Power(int x)
-            {
-                return (x * x);
-            }
-            static void aaa(int x)
-            {
-                if (x >= 10)
-                {
-                    return;
-                }
-                Console.WriteLine("値が10以下です");
-
-            }
-
-            static double CircleArea(double x)
-            {
-                return (x * x * 3.14);
-            }
-
-            static void Time(int x)
-            {
-                int hours = x / 3600;
-                int minute = (x % 3600) / 60;
-                int seconds = x % 60;
-
-                Console.WriteLine($"{hours}時間{minute}分{seconds}秒");
-            }
-
-            static int Add(int a, int b)
-            {
-                return (a + b);
-            }
-
-            static bool IsEven(int number)
-            {
-                if (number % 2 == 0)
-                {
-                    return true;
-                }
-                {
-                    return false;
-                }
-            }
-
-            static int CalcTax(int price)
-            {
-                return (int)Math.Floor(price * 1.1);
-            }
-
-            static int GetMax(int a, int b, int c)
-            {
-                return Math.Max(a, Math.Max(b, c));
-            }
-
-            //static int CalcTax(int price, int a)
-            // {
-            // return (int)Math.Floor(price * 1.1);
-            // }
-
-            //static int CalcDamage(int attac, int defense)
+            //struct Point
             //{
-            //return   
+            //    public int x { get; set; }
+            //    public int y { get; set; }
 
-            static int Suuchi(int x, int y)
-            {
-                if (x > y)
-                {
-                    Console.WriteLine("xはyより大きい");
-                    return 1;
-                }
-                else if (x < y)
-                {
-                    Console.WriteLine("xはyより小さい");
-                    return -1;
-                }
-                Console.WriteLine("xとyは等しい");
-                return 0;
-            }
+            //    public void ShowPoint()
+            //    {
+            //        Console.WriteLine($"x = {x} , y = {y}");
+            //    }
+            //}
+            //enum Season
+            //{
+            //    Spring,
+            //    Summer,
+            //    Autumn,
+            //    Winter
+            //}
+            //static int Calc(int x, int y)
+            //{
+            //    return (x + y);
+            //}
 
-            static int Hennsuu(int x, int y)
-            {
-                if (x > y)
-                {
-                    Console.WriteLine("xはyより大きい");
-                    return 1;
-                }
-                return 0;
-            }
+            //static void mondai2_1_1()
+            //{
+            //    Console.WriteLine("Hello, World!");
+            //}
+//            static void mondai2_1_2()
+//            {
+//                int x = 11;
+//                Console.WriteLine($"x={x}");
 
-            static bool Seisuu(int x)
-            {
-                if (x % 2 == 0)
-                {
-                    return true;
-                }
-                return false;
-            }
+//            }
+//            static void mondai2_1_3()
+//            {
+//                int x = 13;
+//                int y = 17;
+//                Console.WriteLine($"x={x + y}");
+//            }
+//            static void mondai2_1_4()
+//            {
+//                Console.WriteLine(13 * 17);
+//            }
 
-            static void Tennsuu(int x)
-            {
-                if (x >= 60)
-                {
-                    Console.WriteLine("合格");
-                    return;
-                }
-                Console.WriteLine("不合格");
-            }
+//            static void mondai2_2_1()
+//            {
+//                string s = Console.ReadLine();
+//                Console.WriteLine(s);
+//            }
 
-            static void Test(int x)
-            {
-                if (x >= 80)
-                {
-                    Console.WriteLine("合格");
-                    return;
-                }
-                else if (x >= 60)
-                {
-                    Console.WriteLine("不合格");
-                    return;
-                }
-                Console.WriteLine("残念でした");
-            }
+//            static void mondai2_2_2()
+//            {
+//                int x = int.Parse(Console.ReadLine());
+//                Console.WriteLine(x);
+//            }
+//            static void mondai2_2_3(int x, int y)
+//            {
+//                Console.WriteLine((x + y) / 2);
+//            }
+//            static void mondai2_2_4(int x)
+//            {
+//                Console.WriteLine(x * 365);
+//            }
+//            static int Power(int x)
+//            {
+//                return (x * x);
+//            }
+//            static void aaa(int x)
+//            {
+//                if (x >= 10)
+//                {
+//                    return;
+//                }
+//                Console.WriteLine("値が10以下です");
 
-            static void Test2(int x)
-            {
-                if (x >= 80)
-                {
-                    Console.WriteLine("優");
-                    return;
-                }
-                else if (x >= 70)
-                {
-                    Console.WriteLine("良");
-                    return;
-                }
-                else if (x >= 60)
-                {
-                    Console.WriteLine("可");
-                    return;
-                }
-                Console.WriteLine("不可");
-            }
+//            }
 
-            static void Spam()
-            {
-                for (int i = 0; i < 10; i++)
-                {
-                    Console.WriteLine("SPAM");
-                }
-            }
+//            static double CircleArea(double x)
+//            {
+//                return (x * x * 3.14);
+//            }
 
-            static void Kuku()
-            {
-                for (int i = 1; i <= 9; i++)
-                {
-                    Console.WriteLine(3 * i);
-                }
-            }
+//            static void Time(int x)
+//            {
+//                int hours = x / 3600;
+//                int minute = (x % 3600) / 60;
+//                int seconds = x % 60;
 
-            static void Avg()
-            {
-                double a = 0;
-                for (double i = 0; i < 10; i++)
-                {
-                    a += double.Parse(Console.ReadLine());
-                }
-                Console.WriteLine(Math.Truncate(a / 10));
-            }
+//                Console.WriteLine($"{hours}時間{minute}分{seconds}秒");
+//            }
 
-            static void Giants()
-            {
-                int a = 0;
-                int b = 0;
-                int c = 0;
-                int d = 0;
+//            static int Add(int a, int b)
+//            {
+//                return (a + b);
+//            }
 
-                for (int i = 1; i < 10; i++)
-                {
+//            static bool IsEven(int number)
+//            {
+//                if (number % 2 == 0)
+//                {
+//                    return true;
+//                }
+//                {
+//                    return false;
+//                }
+//            }
 
-                    Console.WriteLine($"{i}表、巨人の得点は？");
-                    a = int.Parse(Console.ReadLine());
+//            static int CalcTax(int price)
+//            {
+//                return (int)Math.Floor(price * 1.1);
+//            }
 
-                    Console.WriteLine($"{i}裏、阪神の得点は？");
-                    b = int.Parse(Console.ReadLine());
+//            static int GetMax(int a, int b, int c)
+//            {
+//                return Math.Max(a, Math.Max(b, c));
+//            }
 
-                    c += a;
-                    d += b;
-                }
+//            //static int CalcTax(int price, int a)
+//            // {
+//            // return (int)Math.Floor(price * 1.1);
+//            // }
 
-                Console.WriteLine($"巨人{c}点 , 阪神：{d}点");
+//            //static int CalcDamage(int attac, int defense)
+//            //{
+//            //return   
 
-                if (c > d)
-                {
-                    Console.WriteLine("巨人の勝ち♪");
-                    return;
-                }
-                else if (c < d)
-                {
-                    Console.WriteLine("阪神の勝ち");
-                    return;
-                }
-                Console.WriteLine("引き分け");
-            }
-            static void counts()
-            {
-                int c = 0;
-                int d = 0;
+//            static int Suuchi(int x, int y)
+//            {
+//                if (x > y)
+//                {
+//                    Console.WriteLine("xはyより大きい");
+//                    return 1;
+//                }
+//                else if (x < y)
+//                {
+//                    Console.WriteLine("xはyより小さい");
+//                    return -1;
+//                }
+//                Console.WriteLine("xとyは等しい");
+//                return 0;
+//            }
 
-                for (int i = 0; i < 99; i++)
-                {
-                    Console.WriteLine("ストライク=1, ボール=2，ファウル=3 ?");
-                    int a = int.Parse(Console.ReadLine());
+//            static int Hennsuu(int x, int y)
+//            {
+//                if (x > y)
+//                {
+//                    Console.WriteLine("xはyより大きい");
+//                    return 1;
+//                }
+//                return 0;
+//            }
 
-                    if (a == 1)
-                    {
-                        c++;
+//            static bool Seisuu(int x)
+//            {
+//                if (x % 2 == 0)
+//                {
+//                    return true;
+//                }
+//                return false;
+//            }
 
-                        if (c == 3)
-                        {
-                            break;
-                        }
-                    }
-                    else if (a == 2)
-                    {
-                        d++;
+//            static void Tennsuu(int x)
+//            {
+//                if (x >= 60)
+//                {
+//                    Console.WriteLine("合格");
+//                    return;
+//                }
+//                Console.WriteLine("不合格");
+//            }
 
-                        if (d == 4)
-                        {
-                            break;
-                        }
-                    }
-                    else if (a == 3)
-                    {
-                        if (c <= 1)
-                        {
-                            c++;
-                        }
-                    }
+//            static void Test(int x)
+//            {
+//                if (x >= 80)
+//                {
+//                    Console.WriteLine("合格");
+//                    return;
+//                }
+//                else if (x >= 60)
+//                {
+//                    Console.WriteLine("不合格");
+//                    return;
+//                }
+//                Console.WriteLine("残念でした");
+//            }
 
-                }
+//            static void Test2(int x)
+//            {
+//                if (x >= 80)
+//                {
+//                    Console.WriteLine("優");
+//                    return;
+//                }
+//                else if (x >= 70)
+//                {
+//                    Console.WriteLine("良");
+//                    return;
+//                }
+//                else if (x >= 60)
+//                {
+//                    Console.WriteLine("可");
+//                    return;
+//                }
+//                Console.WriteLine("不可");
+//            }
 
-                Console.WriteLine($"{d}ボール{c}ストライク");
-            }
+//            static void Spam()
+//            {
+//                for (int i = 0; i < 10; i++)
+//                {
+//                    Console.WriteLine("SPAM");
+//                }
+//            }
 
-            static void Hairertsu()
-            {
-                int[] a = new int[10];
-                for (int i = 0; i < 10; i++)
-                {
-                    a[i] = int.Parse(Console.ReadLine());
-                }
-                for (int i = 0; i < 10; i++)
-                {
-                    Console.WriteLine(a[i] * 2);
-                }
-            }
+//            static void Kuku()
+//            {
+//                for (int i = 1; i <= 9; i++)
+//                {
+//                    Console.WriteLine(3 * i);
+//                }
+//            }
 
-            static void Hairertsu2()
-            {
-                int[] a = new int[10];
-                for (int i = 0; i < 10; i++)
-                {
-                    a[i] = int.Parse(Console.ReadLine());
-                }
+//            static void Avg()
+//            {
+//                double a = 0;
+//                for (double i = 0; i < 10; i++)
+//                {
+//                    a += double.Parse(Console.ReadLine());
+//                }
+//                Console.WriteLine(Math.Truncate(a / 10));
+//            }
 
-                Console.Write("偶数 : ");
-                for (int i = 0; i < 10; i++)
-                {
-                    if (a[i] % 2 == 0)
-                    {
-                        Console.Write($"{a[i]} ");
-                    }
-                }
+//            static void Giants()
+//            {
+//                int a = 0;
+//                int b = 0;
+//                int c = 0;
+//                int d = 0;
 
-                Console.WriteLine();
+//                for (int i = 1; i < 10; i++)
+//                {
 
-                Console.Write("奇数 : ");
-                for (int i = 0; i < 10; i++)
-                {
-                    if (a[i] % 2 != 0)
-                    {
-                        Console.Write($"{a[i]} ");
-                    }
-                }
-            }
+//                    Console.WriteLine($"{i}表、巨人の得点は？");
+//                    a = int.Parse(Console.ReadLine());
 
-            static void Seisuu2()
-            {
-                int[] a = new int[10];
+//                    Console.WriteLine($"{i}裏、阪神の得点は？");
+//                    b = int.Parse(Console.ReadLine());
 
-                for (int i = 0; i < 10; i++)
-                {
-                    a[i] = int.Parse(Console.ReadLine());
-                }
-                for (int i = 0; i < 9; i++)
-                {
-                    if (a[i] < a[i + 1])
-                    {
-                        int b = a[i];
-                        a[i] = a[i + 1];
-                        a[i + 1] = b;
-                    }
-                    Console.WriteLine(i);
-                }
-            }
-            static int Nijou(int x)
-            {
-                return x * x;
-            }
+//                    c += a;
+//                    d += b;
+//                }
 
-            static int Avge(int x, int y)
-            {
-                return (x + y) / 2;
-            }
+//                Console.WriteLine($"巨人{c}点 , 阪神：{d}点");
 
-            static int Max(int x, int y, int z)
-            {
-                return Math.Max(x, Math.Max(y, z));
-            }
+//                if (c > d)
+//                {
+//                    Console.WriteLine("巨人の勝ち♪");
+//                    return;
+//                }
+//                else if (c < d)
+//                {
+//                    Console.WriteLine("阪神の勝ち");
+//                    return;
+//                }
+//                Console.WriteLine("引き分け");
+//            }
+//            static void counts()
+//            {
+//                int c = 0;
+//                int d = 0;
 
-            static int Mma(int[] a)
-            {
-                int k = 0;
-                for (int i = 0; i < 4; i++)
-                {
-                    if (a[i] > a[i + 1])
-                    {
-                        k = a[i];
-                    }
-                }
-                if (k < a[4])
-                {
-                    k = a[4];
-                }
-                return k;
-            }
+//                for (int i = 0; i < 99; i++)
+//                {
+//                    Console.WriteLine("ストライク=1, ボール=2，ファウル=3 ?");
+//                    int a = int.Parse(Console.ReadLine());
 
-            static int Mi(int[] a)
-            {
-                int min = 0;
-                for (int i = 0; i < 5; i++)
-                {
-                    if (a[min] > a[i])
-                    {
-                        min = a[i];
-                    }
-                }
-                return min;
-            }
+//                    if (a == 1)
+//                    {
+//                        c++;
 
-            static int Avge(int[] a)
-            {
-                int b = 0;
-                for (int i = 0; i < 5; i++)
-                {
-                    b += a[i];
-                }
-                return b / 5;
-            }
+//                        if (c == 3)
+//                        {
+//                            break;
+//                        }
+//                    }
+//                    else if (a == 2)
+//                    {
+//                        d++;
 
-        public static void M2_4_5()
-        {
-            int b = 0;
-            int c = 0;
-            for (int i = 0; i < 99; i++)
-            {
-                Console.WriteLine($"ストライクの場合は１、ボールの場合は２を入力,ファウルの場合は３を入力");
-                int a = int.Parse(Console.ReadLine());
+//                        if (d == 4)
+//                        {
+//                            break;
+//                        }
+//                    }
+//                    else if (a == 3)
+//                    {
+//                        if (c <= 1)
+//                        {
+//                            c++;
+//                        }
+//                    }
 
-                if (a == 1)
-                {
-                    b++;
-                }
-                if (b == 3)
-                {
-                    break;
-                }
-            else if(a == 2)
-                {
-                    c++;
-                }
-                if(c == 4)
-                {
-                    break;
-                }
-                else if(a == 3 && b < 2)
-                {
-                    b++;
-                }
-            }
-            Console.WriteLine($"{b}ストライク、{c}ボール");
+//                }
 
-        }
+//                Console.WriteLine($"{d}ボール{c}ストライク");
+//            }
+
+//            static void Hairertsu()
+//            {
+//                int[] a = new int[10];
+//                for (int i = 0; i < 10; i++)
+//                {
+//                    a[i] = int.Parse(Console.ReadLine());
+//                }
+//                for (int i = 0; i < 10; i++)
+//                {
+//                    Console.WriteLine(a[i] * 2);
+//                }
+//            }
+
+//            static void Hairertsu2()
+//            {
+//                int[] a = new int[10];
+//                for (int i = 0; i < 10; i++)
+//                {
+//                    a[i] = int.Parse(Console.ReadLine());
+//                }
+
+//                Console.Write("偶数 : ");
+//                for (int i = 0; i < 10; i++)
+//                {
+//                    if (a[i] % 2 == 0)
+//                    {
+//                        Console.Write($"{a[i]} ");
+//                    }
+//                }
+
+//                Console.WriteLine();
+
+//                Console.Write("奇数 : ");
+//                for (int i = 0; i < 10; i++)
+//                {
+//                    if (a[i] % 2 != 0)
+//                    {
+//                        Console.Write($"{a[i]} ");
+//                    }
+//                }
+//            }
+
+//            static void Seisuu2()
+//            {
+//                int[] a = new int[10];
+
+//                for (int i = 0; i < 10; i++)
+//                {
+//                    a[i] = int.Parse(Console.ReadLine());
+//                }
+//                for (int i = 0; i < 9; i++)
+//                {
+//                    if (a[i] < a[i + 1])
+//                    {
+//                        int b = a[i];
+//                        a[i] = a[i + 1];
+//                        a[i + 1] = b;
+//                    }
+//                    Console.WriteLine(i);
+//                }
+//            }
+//            static int Nijou(int x)
+//            {
+//                return x * x;
+//            }
+
+//            static int Avge(int x, int y)
+//            {
+//                return (x + y) / 2;
+//            }
+
+//            static int Max(int x, int y, int z)
+//            {
+//                return Math.Max(x, Math.Max(y, z));
+//            }
+
+//            static int Mma(int[] a)
+//            {
+//                int k = 0;
+//                for (int i = 0; i < 4; i++)
+//                {
+//                    if (a[i] > a[i + 1])
+//                    {
+//                        k = a[i];
+//                    }
+//                }
+//                if (k < a[4])
+//                {
+//                    k = a[4];
+//                }
+//                return k;
+//            }
+
+//            static int Mi(int[] a)
+//            {
+//                int min = 0;
+//                for (int i = 0; i < 5; i++)
+//                {
+//                    if (a[min] > a[i])
+//                    {
+//                        min = a[i];
+//                    }
+//                }
+//                return min;
+//            }
+
+//            static int Avge(int[] a)
+//            {
+//                int b = 0;
+//                for (int i = 0; i < 5; i++)
+//                {
+//                    b += a[i];
+//                }
+//                return b / 5;
+//            }
+
+//        public static void M2_4_5()
+//        {
+//            int b = 0;
+//            int c = 0;
+//            for (int i = 0; i < 99; i++)
+//            {
+//                Console.WriteLine($"ストライクの場合は１、ボールの場合は２を入力,ファウルの場合は３を入力");
+//                int a = int.Parse(Console.ReadLine());
+
+//                if (a == 1)
+//                {
+//                    b++;
+//                }
+//                if (b == 3)
+//                {
+//                    break;
+//                }
+//            else if(a == 2)
+//                {
+//                    c++;
+//                }
+//                if(c == 4)
+//                {
+//                    break;
+//                }
+//                else if(a == 3 && b < 2)
+//                {
+//                    b++;
+//                }
+//            }
+//            Console.WriteLine($"{b}ストライク、{c}ボール");
+
+//        }
 
 
-    }
-    namespace School
-    {
-        class Teacher
-        {
-            public string name { get; set; }
+//    }
+//    namespace School
+//    {
+//        class Teacher
+//        {
+//            public string name { get; set; }
 
-            public void ShowProfile()
-            {
-                Console.WriteLine($"Teacher: {name}");
-            }
-        }
+//            public void ShowProfile()
+//            {
+//                Console.WriteLine($"Teacher: {name}");
+//            }
+//        }
 
-        class Student
-        {
-            public string name { get; set; }
+//        class Student
+//        {
+//            public string name { get; set; }
 
-            public void ShowProfile()
-            {
-                Console.WriteLine($"Student: {name}");
-            }
-        }
-    }
+//            public void ShowProfile()
+//            {
+//                Console.WriteLine($"Student: {name}");
+//            }
+//        }
+//    }
 
         
 
     
-}
+//}
 
 

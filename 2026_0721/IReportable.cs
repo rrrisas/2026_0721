@@ -5,9 +5,12 @@ using System.Text;
 
 namespace _2026_0721
 {
-    interface IReportable
-    {
 
-        string GenerateReport();
+
+    public interface IReportable
+    {
+        void GenerateReport();
     }
+
+
 }
