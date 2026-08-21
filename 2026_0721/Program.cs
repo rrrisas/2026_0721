@@ -1,4 +1,5 @@
 ﻿
+using System.ComponentModel;
 using System.ComponentModel.Design;
 using System.Diagnostics.Contracts;
 using System.IO;
@@ -1737,33 +1738,180 @@ namespace _2026_0721
             //8.4
 
             //本を登録するクラスを別で作る、タイトル著者貸出状況のプロパティ作る、それをリストにする
-            List<string> book = new List<string>();
-            while (true)
-            {
-                Console.WriteLine("1:本を登録");
-                Console.WriteLine("2:貸出");
-                Console.WriteLine("3:返却");
-                Console.WriteLine("4:一覧表示");
+            //  Dictionary<string, string> book = new Dictionary<string, string>();
+            //  List<string> book2 = new List<string>();
+            //  List<string> book3 = new List<string>();
 
-                int library = int.Parse(Console.ReadLine());
+            //  while (true)
+            //  {
+            //      Console.WriteLine("1:本を登録");
+            //      Console.WriteLine("2:貸出");
+            //      Console.WriteLine("3:返却");
+            //      Console.WriteLine("4:一覧表示");
 
-                switch (library)
+            //      int library = int.Parse(Console.ReadLine());
+
+            //      switch (library)
+            //      {
+            //          case 1:
+            //              //本の登録
+            //              Console.WriteLine();
+            //              Console.WriteLine("【登録する本のタイトルを入力してください】");
+            //              string a = Console.ReadLine();
+            //      Console.WriteLine("【登録する本の著者を入力してください】");
+            //              string b = Console.ReadLine();
+
+            //              book.Add(a,b);
+
+            //              Console.WriteLine();
+            //              Console.WriteLine("【登録が完了しました】");
+            //              Console.WriteLine();
+            //              Console.WriteLine($"タイトル：{a}、著者：{b}");
+            //              Console.WriteLine();
+            //              break;
+
+            //case 2:
+            //              Console.WriteLine();
+            //              Console.WriteLine("【貸出する本のタイトルを入力してください】");
+            //              string c = Console.ReadLine();
+
+            //              if(book.ContainsKey(c))
+            //              {
+            //                  book2.Add(c);
+            //                  book4.Add(c);
+            //                  Console.WriteLine();
+            //                  Console.WriteLine("【貸出登録が完了しました】");
+            //                  Console.WriteLine($"タイトル：{c} ");
+            //                  Console.WriteLine();
+            //              }
+            //              else
+            //              {
+            //                  Console.WriteLine();
+            //                  Console.WriteLine("【本を登録してください】");
+            //                  Console.WriteLine();
+            //              }
+
+            //              break;
+
+            //          case 3:
+            //              Console.WriteLine();
+            //              Console.WriteLine("【返却する本のタイトルを入力してください】");
+            //              string d = Console.ReadLine();
+            //              Console.WriteLine();
+            //              if (book2.Contains(d))
+            //              {
+            //                  book3.Add(d);
+            //                  Console.WriteLine("【返却登録が完了しました】");
+            //                  Console.WriteLine($"タイトル：{d}");
+            //                  Console.WriteLine();
+            //              }
+            //              else
+            //              {
+            //                  Console.WriteLine("【本を登録してください】");
+            //              }
+            //              break;
+            //          case 4:
+            //              Console.WriteLine();
+            //              Console.WriteLine("【一覧表示】");
+            //              Console.WriteLine();
+
+            //              foreach(var li in book)
+            //              {
+
+            //                  if (book3.Contains(li.Key) && book2.Contains(li.Key))
+            //                  {
+            //                      Console.WriteLine($"タイトル：{li.Key}、著者：{li.Value}、貸出状況：利用可能");
+            //                  }
+            //                  else if (book2.Contains(li.Key))
+            //                  {
+            //                      Console.WriteLine($"タイトル：{li.Key}、著者：{li.Value}、貸出状況：貸出中");
+            //                  }
+            //                  else
+            //                  {
+            //                      Console.WriteLine($"タイトル：{li.Key}、著者：{li.Value}、貸出状況：利用可能");
+            //                  }
+            //              }
+            //              Console.WriteLine();
+
+            //              break;
+
+            //}
+            //}     
+            //Library library = new Library();
+            //library.Run();
+
+
+                List<Veding> a = new List<Veding>();
+                a.Add(new Veding { number = 1, name = "コーラ", price = 170, stock = 10 });
+                a.Add(new Veding { number = 2, name = "お茶", price = 150, stock = 20 });
+                a.Add(new Veding { number = 3, name = "コーヒー", price = 160, stock = 25 });
+                a.Add(new Veding { number = 4, name = "紅茶", price = 130, stock = 15 });
+                a.Add(new Veding { number = 5, name = "りんごジュース", price = 120, stock = 5 });
+                a.Add(new Veding { number = 6, name = "ポカリ", price = 180, stock = 30 });
+
+                Machin vm = new Machin(a); 
+
+                while (true)
                 {
-                    case 1:
-                //本の登録
-                Console.WriteLine("登録する本を入力してください");
-                        string a = Console.ReadLine();
+                    Console.WriteLine("=== 商品一覧 ===");
+                    foreach (var b in a)
+                    {
+                        Console.WriteLine($"{b.number}：{b.name}、{b.price}円、在庫：{b.stock}");
+                    }
 
-                       
-                        
-                        break;
-            }
-            }
+                    Console.WriteLine();
+                    Console.WriteLine("1: お金を入れる");
+                    Console.WriteLine("2: 商品を購入する");
+                    Console.WriteLine("3: 返金する");
+                    Console.WriteLine("4: 終了する");
+                    Console.Write("選択: ");
 
-        }
+                    int c = int.Parse(Console.ReadLine());
+                    Console.WriteLine();
+
+                    try
+                    {
+                        switch (c)
+                        {
+                            case 1:
+                                Console.WriteLine("お金を入れてください（10/50/100/500/1000）");
+                                int money = int.Parse(Console.ReadLine());
+                                vm.InsertMoney(money);
+                                break;
+
+                            case 2:
+                                Console.Write("商品番号: ");
+                                int num = int.Parse(Console.ReadLine());
+                                vm.Buy(num);
+                                break;
+
+                            case 3:
+                                vm.Refund();
+                                break;
+
+                            case 4:
+                                Console.WriteLine("終了します");
+                                Console.WriteLine($"総売上: {vm.GetSales()}円");
+                                return;
+
+                            default:
+                                Console.WriteLine("不正な入力です");
+                                break;
+                        }
+                    }
+                    catch (FormatException)
+                    {
+                        Console.WriteLine("数字を入力してください");
+                    }
+
+                    Console.WriteLine();
+                }
+            }
+        
 
     }
 }
+
 
         //class Logger
         //{
