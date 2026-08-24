@@ -1841,72 +1841,72 @@ namespace _2026_0721
             //library.Run();
 
 
-                List<Veding> a = new List<Veding>();
-                a.Add(new Veding { number = 1, name = "コーラ", price = 170, stock = 10 });
-                a.Add(new Veding { number = 2, name = "お茶", price = 150, stock = 20 });
-                a.Add(new Veding { number = 3, name = "コーヒー", price = 160, stock = 25 });
-                a.Add(new Veding { number = 4, name = "紅茶", price = 130, stock = 15 });
-                a.Add(new Veding { number = 5, name = "りんごジュース", price = 120, stock = 5 });
-                a.Add(new Veding { number = 6, name = "ポカリ", price = 180, stock = 30 });
+                //List<Veding> a = new List<Veding>();
+                //a.Add(new Veding { number = 1, name = "コーラ", price = 170, stock = 10 });
+                //a.Add(new Veding { number = 2, name = "お茶", price = 150, stock = 20 });
+                //a.Add(new Veding { number = 3, name = "コーヒー", price = 160, stock = 25 });
+                //a.Add(new Veding { number = 4, name = "紅茶", price = 130, stock = 15 });
+                //a.Add(new Veding { number = 5, name = "りんごジュース", price = 120, stock = 5 });
+                //a.Add(new Veding { number = 6, name = "ポカリ", price = 180, stock = 30 });
 
-                Machin vm = new Machin(a); 
+                //Machin vm = new Machin(a); 
 
-                while (true)
-                {
-                    Console.WriteLine("=== 商品一覧 ===");
-                    foreach (var b in a)
-                    {
-                        Console.WriteLine($"{b.number}：{b.name}、{b.price}円、在庫：{b.stock}");
-                    }
+                //while (true)
+                //{
+                //    Console.WriteLine("=== 商品一覧 ===");
+                //    foreach (var b in a)
+                //    {
+                //        Console.WriteLine($"{b.number}：{b.name}、{b.price}円、在庫：{b.stock}");
+                //    }
 
-                    Console.WriteLine();
-                    Console.WriteLine("1: お金を入れる");
-                    Console.WriteLine("2: 商品を購入する");
-                    Console.WriteLine("3: 返金する");
-                    Console.WriteLine("4: 終了する");
-                    Console.Write("選択: ");
+                //    Console.WriteLine();
+                //    Console.WriteLine("1: お金を入れる");
+                //    Console.WriteLine("2: 商品を購入する");
+                //    Console.WriteLine("3: 返金する");
+                //    Console.WriteLine("4: 終了する");
+                //    Console.Write("選択: ");
 
-                    int c = int.Parse(Console.ReadLine());
-                    Console.WriteLine();
+                //    int c = int.Parse(Console.ReadLine());
+                //    Console.WriteLine();
 
-                    try
-                    {
-                        switch (c)
-                        {
-                            case 1:
-                                Console.WriteLine("お金を入れてください（10/50/100/500/1000）");
-                                int money = int.Parse(Console.ReadLine());
-                                vm.InsertMoney(money);
-                                break;
+                //    try
+                //    {
+                //        switch (c)
+                //        {
+                //            case 1:
+                //                Console.WriteLine("お金を入れてください（10/50/100/500/1000）");
+                //                int money = int.Parse(Console.ReadLine());
+                //                vm.InsertMoney(money);
+                //                break;
 
-                            case 2:
-                                Console.Write("商品番号: ");
-                                int num = int.Parse(Console.ReadLine());
-                                vm.Buy(num);
-                                break;
+                //            case 2:
+                //                Console.Write("商品番号: ");
+                //                int num = int.Parse(Console.ReadLine());
+                //                vm.Buy(num);
+                //                break;
 
-                            case 3:
-                                vm.Refund();
-                                break;
+                //            case 3:
+                //                vm.Refund();
+                //                break;
 
-                            case 4:
-                                Console.WriteLine("終了します");
-                                Console.WriteLine($"総売上: {vm.GetSales()}円");
-                                return;
+                //            case 4:
+                //                Console.WriteLine("終了します");
+                //                Console.WriteLine($"総売上: {vm.GetSales()}円");
+                //                return;
 
-                            default:
-                                Console.WriteLine("不正な入力です");
-                                break;
-                        }
-                    }
-                    catch (FormatException)
-                    {
-                        Console.WriteLine("数字を入力してください");
-                    }
+                //            default:
+                //                Console.WriteLine("不正な入力です");
+                //                break;
+                //        }
+                //    }
+                //    catch (FormatException)
+                //    {
+                //        Console.WriteLine("数字を入力してください");
+                //    }
 
-                    Console.WriteLine();
-                }
-            }
+                //    Console.WriteLine();
+                //}
+         }
         
 
     }
