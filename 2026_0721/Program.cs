@@ -2439,13 +2439,148 @@ namespace _2026_0721
 // using System.ComponentModel;
 //using System.Security.AccessControl;
 //using System.Security.Cryptography.X509Certificates;
+//2.8.3
+//List<Animal> dc = new List<Animal>();
+//dc.Add(new Dog("アトム",4));
+//dc.Add(new Cat("み", 4));
 
-namespace _0824
-{
-    public class Program
-    {
-        static void Main(string[] args)
-        {
+//foreach(Animal a in dc)
+//{
+//    Console.WriteLine(a);
+//    a.Speak();
+//}
+//2.8.4
+
+//List<Animal> dcb = new List<Animal>();
+//dcb.Add(new Dog("アトム",4));
+//dcb.Add(new Cat("み", 4));
+//dcb.Add(new Bird("み", 4));
+//foreach(Animal a in dcb)
+//{
+// Console.WriteLine(a);
+//    if (a is Bird b) { b.Fly(); }
+//    a.Speak();
+
+//}
+
+//2.8.5
+//Dog dog = new Dog("アトム",5);
+//Cat cat = new Cat("ミケ", 5);
+//Bird bird = new Bird("ピー",4);
+
+//Animal a = new Dog("アトム",5);
+//a.walk();
+//a.walk(3);
+
+//2.8.6
+
+//List<Animal> animals = new List<Animal>()
+//{
+//    new Dog("ポチ", 3),
+//    new Cat("ミケ", 2),
+//    new Bird("ピーちゃん", 1)
+//};
+
+//foreach (Animal a in animals)
+//{
+//    Console.WriteLine($"{a.Species} : {a.Name}, {a.Age}");
+//}
+
+//2.8.7
+
+//Cat cat = new Cat("猫",3);
+//cat.Showkaind():
+
+//2.8.8
+
+//2.8.9
+//List<Animal> a = new List<Animal>();
+//a.Add(new Dog("犬",4));
+//a.Add(new Cat("猫", 5));
+//a.Add(new Bird("鳥", 6));
+
+//foreach(Animal b in a)
+//{
+
+//    b.DoDaily();
+//}
+
+//2.8.10
+//List<IPlayable> a = new List<IPlayable>();
+//a.Add(new Dog("犬", 4));
+//a.Add(new Cat("猫", 5));
+//a.Add(new Bird("鳥", 6));
+//foreach (IPlayable b in a)
+//{
+//    b.play();
+//}
+//List<Animal> b = new List<Animal>();
+//b.Add(new Dog("犬", 4));
+//b.Add(new Cat("猫", 5));
+//b.Add(new Bird("鳥", 6));
+//foreach (Animal c in b)
+//{
+//    c.Speak();
+//}
+
+//2.8.11
+//int counts = 0;
+//Dictionary<string, int> ani = new Dictionary<string, int>();
+//List<Animal> anim = new List<Animal>();
+//Console.WriteLine("登録する頭数を教えてください。");
+//int b = int.Parse(Console.ReadLine());
+//for (int i = 0; i < b; i++)
+//{
+//    Console.WriteLine("種類、名称、年齢を入力してください");
+//    string a = Console.ReadLine();
+//    string[] parts = a.Split(' ');
+//    string type = parts[0];
+//    string name = parts[1];
+//    int age = int.Parse(parts[2]);
+//    Animal d = null;
+//    if (type == "Dog")
+//        d = new Dog(name, age);
+//    else if (type == "Cat")
+//        d = new Cat(name, age);
+//    else if (type == "Bird")
+//        d = new Bird(name, age);
+//    else
+//    {
+//        Console.WriteLine("不明な種類です。");
+//        continue;
+//    }
+//    anim.Add(d);
+//    if (!ani.ContainsKey(type))
+//        ani[type] = 0;
+
+//    ani[type]++;
+//}
+//foreach (Animal a in anim)
+//{
+//    a.Speak();
+//    a.ShowProfile();
+
+
+//    if (a is IPlayable p)
+//    {
+//        a.Play();
+//    }
+
+//    Console.WriteLine();
+//}
+
+//Console.WriteLine("--- 種類別頭数 ---");
+//foreach (var kv in ani)
+//{
+//    Console.WriteLine($"{kv.Key}: {kv.Value} 匹");
+//}
+
+//namespace _0824
+//{
+//    public class Program
+//    {
+//        static void Main(string[] args)
+//        {
             //2.1
             //Console.WriteLine("Hello, World!");
             //2.1.2
@@ -2600,267 +2735,267 @@ namespace _0824
             //Console.WriteLine(c);
             //2.6.4
             //M2_6_4();
-        }
-        public static void M2_6_4()
-        {
-            int c = 0;
-            int[] b = new int[5];
-            int d = 0;
-            int min = int.MaxValue;
+        //}
+    //    public static void M2_6_4()
+    //    {
+    //        int c = 0;
+    //        int[] b = new int[5];
+    //        int d = 0;
+    //        int min = int.MaxValue;
 
-            for (int i = 0; i < 5; i++)
-            {
-                Console.WriteLine("数字を入力してください");
-                int a = int.Parse(Console.ReadLine());
-                c += a;
-                if (d < a)
-                {
-                    d = a;
-                }
-                else if (a < min)
-                {
-                    min = a;
-                }
-            }
-            Console.WriteLine();
-            Console.WriteLine($"最大値:{d}");
-            Console.WriteLine();
-            Console.WriteLine($"最小値:{min}");
-            Console.WriteLine();
-            Console.WriteLine($"平均値:{c / 5}");
-        }
+    //        for (int i = 0; i < 5; i++)
+    //        {
+    //            Console.WriteLine("数字を入力してください");
+    //            int a = int.Parse(Console.ReadLine());
+    //            c += a;
+    //            if (d < a)
+    //            {
+    //                d = a;
+    //            }
+    //            else if (a < min)
+    //            {
+    //                min = a;
+    //            }
+    //        }
+    //        Console.WriteLine();
+    //        Console.WriteLine($"最大値:{d}");
+    //        Console.WriteLine();
+    //        Console.WriteLine($"最小値:{min}");
+    //        Console.WriteLine();
+    //        Console.WriteLine($"平均値:{c / 5}");
+    //    }
 
-        public static int M2_6_3(int x, int y)
-        {
-            return (x + y) / 2;
-        }
-        public static int M2_6_2(int x, int y)
-        {
-            if (x > y)
-            {
-                return x;
-            }
-            else if (y > x)
-            {
-                return y;
-            }
-            return 0;
-        }
-        public static int M2_6_1(int x)
-        {
-            return x * x;
-        }
-        public static int M2_3_1(int x, int y)
-        {
-            if (x > y)
-            {
-                Console.WriteLine("xはｙより大きい");
-                return 1;
-            }
+    //    public static int M2_6_3(int x, int y)
+    //    {
+    //        return (x + y) / 2;
+    //    }
+    //    public static int M2_6_2(int x, int y)
+    //    {
+    //        if (x > y)
+    //        {
+    //            return x;
+    //        }
+    //        else if (y > x)
+    //        {
+    //            return y;
+    //        }
+    //        return 0;
+    //    }
+    //    public static int M2_6_1(int x)
+    //    {
+    //        return x * x;
+    //    }
+    //    public static int M2_3_1(int x, int y)
+    //    {
+    //        if (x > y)
+    //        {
+    //            Console.WriteLine("xはｙより大きい");
+    //            return 1;
+    //        }
 
-            return 0;
+    //        return 0;
 
-        }
+    //    }
 
-        public static int M2_3_2(int x, int y)
-        {
-            if (x > y)
-            {
-                Console.WriteLine("ｘはｙより大きい");
-                return 1;
-            }
-            else if (x < y)
-            {
-                Console.WriteLine("yはxより大きい");
-                return 1;
-            }
-            else
-            {
-                Console.WriteLine("ｘとｙは等しい");
-                return 1;
-            }
-            return 0;
-        }
+    //    public static int M2_3_2(int x, int y)
+    //    {
+    //        if (x > y)
+    //        {
+    //            Console.WriteLine("ｘはｙより大きい");
+    //            return 1;
+    //        }
+    //        else if (x < y)
+    //        {
+    //            Console.WriteLine("yはxより大きい");
+    //            return 1;
+    //        }
+    //        else
+    //        {
+    //            Console.WriteLine("ｘとｙは等しい");
+    //            return 1;
+    //        }
+    //        return 0;
+    //    }
 
-        public static void M2_3_3()
-        {
-            int c = int.Parse(Console.ReadLine());
-            if (c % 2 == 0)
-            {
-                Console.WriteLine("偶数です");
-            }
-            else
-            {
-                Console.WriteLine("奇数です");
-            }
-        }
-        public static void M2_3_4()
-        {
-            int x = int.Parse(Console.ReadLine());
-            if (80 <= x)
-            {
-                Console.WriteLine("たいへんよくできました");
-                Console.WriteLine("優");
-            }
-            if (80 >= x && 60 <= x)
-            {
-                Console.WriteLine("よくできました");
-            }
-            if (80 >= x && 70 <= x)
-            {
-                Console.WriteLine("良");
-            }
-            if (70 >= x && 60 <= x)
-            {
-                Console.WriteLine("可");
-            }
-            else if (60 <= x)
-            {
-                Console.WriteLine("合格");
-            }
-            else if (60 >= x)
-            {
-                Console.WriteLine("不合格");
-                Console.WriteLine("残念でした");
-                Console.WriteLine("不可");
-            }
-        }
-        public static int M2_3_5(int x, int y)
-        {
-            if (x < y && x % 2 == 0 && y % 2 == 0)
-            {
-                Console.WriteLine("xはyより小さく、かつ、xとyはともに偶数である");
-                return 1;
-            }
-            if (x == y && x < 0 && y < 0)
-            {
-                Console.WriteLine("xとyは等しく、かつ、負の数である");
-                return 1;
-            }
-            if (x < y || x % 2 == 0)
-            {
-                Console.WriteLine("xはyより小さい、または、xは偶数である");
-                return 1;
-            }
-            if (x <= 10 && x >= 100 && y >= 10 && y <= 100)
-            {
-                Console.WriteLine("xは10以下または100以上で、かつ、yは10以上かつ100以下である");
-                return 1;
-            }
-            if (x > 0 && y > 0)
-            {
-                Console.WriteLine("xもyも負の数である、ではない");
-                return 1;
-            }
-            return 0;
-        }
+    //    public static void M2_3_3()
+    //    {
+    //        int c = int.Parse(Console.ReadLine());
+    //        if (c % 2 == 0)
+    //        {
+    //            Console.WriteLine("偶数です");
+    //        }
+    //        else
+    //        {
+    //            Console.WriteLine("奇数です");
+    //        }
+    //    }
+    //    public static void M2_3_4()
+    //    {
+    //        int x = int.Parse(Console.ReadLine());
+    //        if (80 <= x)
+    //        {
+    //            Console.WriteLine("たいへんよくできました");
+    //            Console.WriteLine("優");
+    //        }
+    //        if (80 >= x && 60 <= x)
+    //        {
+    //            Console.WriteLine("よくできました");
+    //        }
+    //        if (80 >= x && 70 <= x)
+    //        {
+    //            Console.WriteLine("良");
+    //        }
+    //        if (70 >= x && 60 <= x)
+    //        {
+    //            Console.WriteLine("可");
+    //        }
+    //        else if (60 <= x)
+    //        {
+    //            Console.WriteLine("合格");
+    //        }
+    //        else if (60 >= x)
+    //        {
+    //            Console.WriteLine("不合格");
+    //            Console.WriteLine("残念でした");
+    //            Console.WriteLine("不可");
+    //        }
+    //    }
+    //    public static int M2_3_5(int x, int y)
+    //    {
+    //        if (x < y && x % 2 == 0 && y % 2 == 0)
+    //        {
+    //            Console.WriteLine("xはyより小さく、かつ、xとyはともに偶数である");
+    //            return 1;
+    //        }
+    //        if (x == y && x < 0 && y < 0)
+    //        {
+    //            Console.WriteLine("xとyは等しく、かつ、負の数である");
+    //            return 1;
+    //        }
+    //        if (x < y || x % 2 == 0)
+    //        {
+    //            Console.WriteLine("xはyより小さい、または、xは偶数である");
+    //            return 1;
+    //        }
+    //        if (x <= 10 && x >= 100 && y >= 10 && y <= 100)
+    //        {
+    //            Console.WriteLine("xは10以下または100以上で、かつ、yは10以上かつ100以下である");
+    //            return 1;
+    //        }
+    //        if (x > 0 && y > 0)
+    //        {
+    //            Console.WriteLine("xもyも負の数である、ではない");
+    //            return 1;
+    //        }
+    //        return 0;
+    //    }
 
-        public static void M2_4_4()
-        {
-            int k = 0;
-            int h = 0;
+    //    public static void M2_4_4()
+    //    {
+    //        int k = 0;
+    //        int h = 0;
 
-            for (int i = 1; i < 10; i++)
-            {
-                Console.Write($"{i}回表、巨人の得点を入力してください：");
-                int b = int.Parse(Console.ReadLine());
-                Console.Write($"{i}回裏、阪神の得点を入力してください：");
-                int c = int.Parse(Console.ReadLine());
-                k += b;
-                h += c;
-            }
-            Console.WriteLine();
-            Console.WriteLine($"巨人；{k}点、阪神：{h}点");
-            Console.WriteLine();
-            if (k > h)
-            {
-                Console.WriteLine("巨人の勝ち");
-            }
-            else
-            {
-                Console.WriteLine("阪神の勝ち");
-            }
-        }
+    //        for (int i = 1; i < 10; i++)
+    //        {
+    //            Console.Write($"{i}回表、巨人の得点を入力してください：");
+    //            int b = int.Parse(Console.ReadLine());
+    //            Console.Write($"{i}回裏、阪神の得点を入力してください：");
+    //            int c = int.Parse(Console.ReadLine());
+    //            k += b;
+    //            h += c;
+    //        }
+    //        Console.WriteLine();
+    //        Console.WriteLine($"巨人；{k}点、阪神：{h}点");
+    //        Console.WriteLine();
+    //        if (k > h)
+    //        {
+    //            Console.WriteLine("巨人の勝ち");
+    //        }
+    //        else
+    //        {
+    //            Console.WriteLine("阪神の勝ち");
+    //        }
+    //    }
 
-        public static void M2_4_5()
-        {
-            int b = 0;
-            int c = 0;
-            for (int i = 0; i < 99; i++)
-            {
-                Console.WriteLine("ストライクの場合は１、ボールの場合は２を入力してください、ファウルの場合は3を入力してください");
-                int a = int.Parse(Console.ReadLine());
-                if (a == 1)
-                {
-                    b += a;
-                    if (b == 3)
-                    {
-                        break;
-                    }
-                }
-                else if (a == 3 && b < 2)
-                {
-                    b += 1;
-                }
-                else if (a == 2)
-                {
-                    c += 1;
-                    if (c == 4)
-                    {
-                        break;
-                    }
-                }
-            }
-            Console.WriteLine($"{c}ボール、{b}ストライク");
-        }
-        public static void M2_5_1()
-        {
-            int[] a = new int[10];
-            for (int i = 0; i < 10; i++)
-            {
-                Console.WriteLine("数字を入力してください");
-                int b = int.Parse(Console.ReadLine());
-                a[i] = b;
-            }
-            foreach (int c in a)
-            {
-                Console.WriteLine(2 * c);
-            }
-        }
-        public static void M2_5_2()
-        {
-            int[] d = new int[10];
-            int[] e = new int[10];
-            for (int i = 0; i < 10; i++)
-            {
-                Console.WriteLine("数字を入力してください");
-                int a = int.Parse(Console.ReadLine());
-                d[i] = a;
-            }
-            Console.WriteLine();
-            Console.WriteLine("偶数");
-            Console.WriteLine();
-            foreach (int f in d)
-            {
-                if (f % 2 == 0)
-                {
-                    Console.WriteLine(f);
-                }
-            }
-            Console.WriteLine();
-            Console.WriteLine("奇数");
-            Console.WriteLine();
-            foreach (int f in d)
-            {
-                if (f % 2 == 1)
-                {
-                    Console.WriteLine(f);
-                }
-            }
+    //    public static void M2_4_5()
+    //    {
+    //        int b = 0;
+    //        int c = 0;
+    //        for (int i = 0; i < 99; i++)
+    //        {
+    //            Console.WriteLine("ストライクの場合は１、ボールの場合は２を入力してください、ファウルの場合は3を入力してください");
+    //            int a = int.Parse(Console.ReadLine());
+    //            if (a == 1)
+    //            {
+    //                b += a;
+    //                if (b == 3)
+    //                {
+    //                    break;
+    //                }
+    //            }
+    //            else if (a == 3 && b < 2)
+    //            {
+    //                b += 1;
+    //            }
+    //            else if (a == 2)
+    //            {
+    //                c += 1;
+    //                if (c == 4)
+    //                {
+    //                    break;
+    //                }
+    //            }
+    //        }
+    //        Console.WriteLine($"{c}ボール、{b}ストライク");
+    //    }
+    //    public static void M2_5_1()
+    //    {
+    //        int[] a = new int[10];
+    //        for (int i = 0; i < 10; i++)
+    //        {
+    //            Console.WriteLine("数字を入力してください");
+    //            int b = int.Parse(Console.ReadLine());
+    //            a[i] = b;
+    //        }
+    //        foreach (int c in a)
+    //        {
+    //            Console.WriteLine(2 * c);
+    //        }
+    //    }
+    //    public static void M2_5_2()
+    //    {
+    //        int[] d = new int[10];
+    //        int[] e = new int[10];
+    //        for (int i = 0; i < 10; i++)
+    //        {
+    //            Console.WriteLine("数字を入力してください");
+    //            int a = int.Parse(Console.ReadLine());
+    //            d[i] = a;
+    //        }
+    //        Console.WriteLine();
+    //        Console.WriteLine("偶数");
+    //        Console.WriteLine();
+    //        foreach (int f in d)
+    //        {
+    //            if (f % 2 == 0)
+    //            {
+    //                Console.WriteLine(f);
+    //            }
+    //        }
+    //        Console.WriteLine();
+    //        Console.WriteLine("奇数");
+    //        Console.WriteLine();
+    //        foreach (int f in d)
+    //        {
+    //            if (f % 2 == 1)
+    //            {
+    //                Console.WriteLine(f);
+    //            }
+    //        }
 
-        }
-    }
-}
+    //    }
+    //}
+//}
 
 
 
