@@ -1841,73 +1841,366 @@ namespace _2026_0721
             //library.Run();
 
 
-                //List<Veding> a = new List<Veding>();
-                //a.Add(new Veding { number = 1, name = "コーラ", price = 170, stock = 10 });
-                //a.Add(new Veding { number = 2, name = "お茶", price = 150, stock = 20 });
-                //a.Add(new Veding { number = 3, name = "コーヒー", price = 160, stock = 25 });
-                //a.Add(new Veding { number = 4, name = "紅茶", price = 130, stock = 15 });
-                //a.Add(new Veding { number = 5, name = "りんごジュース", price = 120, stock = 5 });
-                //a.Add(new Veding { number = 6, name = "ポカリ", price = 180, stock = 30 });
+            //List<Veding> a = new List<Veding>();
+            //a.Add(new Veding { number = 1, name = "コーラ", price = 170, stock = 10 });
+            //a.Add(new Veding { number = 2, name = "お茶", price = 150, stock = 20 });
+            //a.Add(new Veding { number = 3, name = "コーヒー", price = 160, stock = 25 });
+            //a.Add(new Veding { number = 4, name = "紅茶", price = 130, stock = 15 });
+            //a.Add(new Veding { number = 5, name = "りんごジュース", price = 120, stock = 5 });
+            //a.Add(new Veding { number = 6, name = "ポカリ", price = 180, stock = 30 });
 
-                //Machin vm = new Machin(a); 
+            //Machin vm = new Machin(a); 
 
-                //while (true)
-                //{
-                //    Console.WriteLine("=== 商品一覧 ===");
-                //    foreach (var b in a)
-                //    {
-                //        Console.WriteLine($"{b.number}：{b.name}、{b.price}円、在庫：{b.stock}");
-                //    }
+            //while (true)
+            //{
+            //    Console.WriteLine("=== 商品一覧 ===");
+            //    foreach (var b in a)
+            //    {
+            //        Console.WriteLine($"{b.number}：{b.name}、{b.price}円、在庫：{b.stock}");
+            //    }
 
-                //    Console.WriteLine();
-                //    Console.WriteLine("1: お金を入れる");
-                //    Console.WriteLine("2: 商品を購入する");
-                //    Console.WriteLine("3: 返金する");
-                //    Console.WriteLine("4: 終了する");
-                //    Console.Write("選択: ");
+            //    Console.WriteLine();
+            //    Console.WriteLine("1: お金を入れる");
+            //    Console.WriteLine("2: 商品を購入する");
+            //    Console.WriteLine("3: 返金する");
+            //    Console.WriteLine("4: 終了する");
+            //    Console.Write("選択: ");
 
-                //    int c = int.Parse(Console.ReadLine());
-                //    Console.WriteLine();
+            //    int c = int.Parse(Console.ReadLine());
+            //    Console.WriteLine();
 
-                //    try
-                //    {
-                //        switch (c)
-                //        {
-                //            case 1:
-                //                Console.WriteLine("お金を入れてください（10/50/100/500/1000）");
-                //                int money = int.Parse(Console.ReadLine());
-                //                vm.InsertMoney(money);
-                //                break;
+            //    try
+            //    {
+            //        switch (c)
+            //        {
+            //            case 1:
+            //                Console.WriteLine("お金を入れてください（10/50/100/500/1000）");
+            //                int money = int.Parse(Console.ReadLine());
+            //                vm.InsertMoney(money);
+            //                break;
 
-                //            case 2:
-                //                Console.Write("商品番号: ");
-                //                int num = int.Parse(Console.ReadLine());
-                //                vm.Buy(num);
-                //                break;
+            //            case 2:
+            //                Console.Write("商品番号: ");
+            //                int num = int.Parse(Console.ReadLine());
+            //                vm.Buy(num);
+            //                break;
 
-                //            case 3:
-                //                vm.Refund();
-                //                break;
+            //            case 3:
+            //                vm.Refund();
+            //                break;
 
-                //            case 4:
-                //                Console.WriteLine("終了します");
-                //                Console.WriteLine($"総売上: {vm.GetSales()}円");
-                //                return;
+            //            case 4:
+            //                Console.WriteLine("終了します");
+            //                Console.WriteLine($"総売上: {vm.GetSales()}円");
+            //                return;
 
-                //            default:
-                //                Console.WriteLine("不正な入力です");
-                //                break;
-                //        }
-                //    }
-                //    catch (FormatException)
-                //    {
-                //        Console.WriteLine("数字を入力してください");
-                //    }
+            //            default:
+            //                Console.WriteLine("不正な入力です");
+            //                break;
+            //        }
+            //    }
+            //    catch (FormatException)
+            //    {
+            //        Console.WriteLine("数字を入力してください");
+            //    }
 
-                //    Console.WriteLine();
-                //}
-         }
-        
+            //    Console.WriteLine();
+            //}
+            //4.1.1
+            //try
+            //{
+            //    Console.WriteLine("整数を入力してください");
+            //    int a = int.Parse(Console.ReadLine());
+            //}
+            //catch(FormatException)
+            //{
+            //    Console.WriteLine("整数を入力してください");
+            //}
+
+            //4.2.1
+            //try
+            //{
+            //    string path = "test.txt";
+
+            //    string text = File.ReadAllText(path);
+            //    Console.WriteLine(text);
+
+            //}
+            //catch (FileNotFoundException)
+            //{
+            //    Console.WriteLine("ファイルが見つかりません");
+            //}
+            //finally
+            //{
+            //    Console.WriteLine("処理を終了します");
+            //}
+
+            //4.3.1
+            //try
+            //{
+            //    int a = 3 / 0;
+            //    Console.WriteLine(a);
+
+            //}
+            //catch (DivideByZeroException)
+            //{
+            //    Console.WriteLine("0で割ることはできません");
+            //}
+            //try
+            //{
+            //    int[] b = { 1, 2, 3 };
+            //    Console.WriteLine("整数を入力してください");
+            //    int c = int.Parse(Console.ReadLine());
+            //    Console.WriteLine(b[c]);
+            //}
+            //catch (IndexOutOfRangeException)
+            //{
+            //    Console.WriteLine("配列の範囲外です");
+            //}
+
+            //4.4.1
+            //    Console.WriteLine("年齢を入力してください");
+            //    try
+            //    {
+            //        int a = int.Parse(Console.ReadLine());
+            //        CheckAge(a);
+            //    }
+            //    catch(ArgumentOutOfRangeException)
+            //    {
+            //        Console.WriteLine("入力が不正です");
+            //    }
+            //}
+            //public static void CheckAge(int age)
+            //{
+            //    if(age < 0 || age > 120)
+            //    {
+            //        throw new ArgumentOutOfRangeException();
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine($"年齢は{ age}歳です");
+            //    }
+
+            //4.5.1
+
+            //try
+            //{
+            //    Console.WriteLine("分子を入力してください");
+            //    int a = int.Parse(Console.ReadLine());
+            //    Console.WriteLine("分母を入力してください");
+            //    int b = int.Parse(Console.ReadLine());
+            //    int c = a / b;
+            //    Console.WriteLine(c);
+            //}
+            //catch (DivideByZeroException)
+            //{
+            //    Console.WriteLine("0で割ることはできません");
+            //}
+            //catch (FormatException)
+            //{
+            //    Console.WriteLine("整数を入力してください");
+            //}
+
+            //4..6.1
+            //int total = 0;
+            //for(int i = 1;i <= 10;i++)
+            //{
+            //    total += i;
+            //}
+            //Console.WriteLine($"合計は{total}");
+
+            //4.7.1
+            //while (true)
+            //{
+            //    try
+            //    {
+            //        Console.WriteLine("数値１を入力してください");
+            //        int a = int.Parse(Console.ReadLine());
+            //        Console.WriteLine("数値２を入力してください");
+            //        int b = int.Parse(Console.ReadLine());
+            //        Console.WriteLine("演算子入力を入力してください");
+            //        string c = Console.ReadLine();
+            //        if (c == "+")
+            //        {
+            //            Console.WriteLine(a + b);
+            //        }
+            //        else if (c == "-")
+            //        {
+            //            Console.WriteLine(a - b);
+            //        }
+            //        else if (c == "*")
+            //        {
+            //            Console.WriteLine(a * b);
+            //        }
+            //        else if (c == "/")
+            //        {
+            //            Console.WriteLine(a / b);
+            //        }
+            //        else
+            //        {
+            //            throw new ArgumentException();
+            //        }
+            //    }
+            //    catch (FormatException)
+            //    {
+            //        Console.WriteLine("整数を入力してください");
+            //    }
+            //    catch (DivideByZeroException)
+            //    {
+            //        Console.WriteLine("０で割ることはできません");
+            //    }
+            //    catch (ArgumentException)
+            //    {
+            //        Console.WriteLine("この演算子は使用できません");
+            //    }
+            //}
+            //5.1.1
+            //書き込みだけ
+            //using (StreamWriter a = new StreamWriter("output.txt"))
+            //{
+            //    a.WriteLine("a");
+            //    a.WriteLine("b");
+            //    a.WriteLine("c");
+            //}
+            //Console.WriteLine("書き込みが完了しました");
+
+            //5.2.1
+            //テキストファイルの読み込み
+            //string a = "output.txt";
+            //if (!File.Exists(a))
+            //{
+            //    Console.WriteLine("ファイルが見つかりません");
+
+            //}
+            //try
+            //{
+            //    using (StreamReader b = new StreamReader(a))
+            //    {
+            //        int lineNumber = 1;
+            //        string line;
+            //        //ファイルの文字があるときは出力し、Line番号を増やす
+            //        while ((line = b.ReadLine()) != null)
+            //        {
+            //            Console.WriteLine($"{lineNumber}:{line}");
+            //            lineNumber++;
+            //        }
+            //    }
+            //}
+            //catch(Exception ex)
+            //{
+            //    Console.WriteLine("読み込み中にエラーが発生しました");
+            //}
+
+            //5.3.1
+            //string c = "append.txt";
+            //using (StreamWriter a =new StreamWriter(c, append: true))
+            //{
+            //    a.WriteLine("2025-09-03 雨");
+            //}
+            //Console.WriteLine("書き込みが完了しました");
+            //5.3.2
+            //string a = "append.txt";
+            //using (StreamWriter b = new StreamWriter(a, append:false))
+            //{
+            //    b.WriteLine("上書きが完了しました");
+            //}
+            //Console.WriteLine("上書きが完了しました");
+            //5.4.1
+            //Console.WriteLine("ファイル名を入力してください");
+            //try
+            //{
+            //    string a = Console.ReadLine();
+            //    if (File.Exists(a))
+            //    {
+            //        using (StreamReader b = new StreamReader(a))
+            //        {
+            //            //行番号付き表示
+            //            int lineNumber = 1;
+            //            string line;
+
+            //            while((line = b.ReadLine()) != null)
+            //            {
+            //                Console.WriteLine($"{ lineNumber}:{ line}");
+            //                lineNumber++;
+            //            }
+            //        }
+            //    }
+            //    else
+            //    {
+            //        throw new FileNotFoundException();
+            //    }
+            //} 
+            //catch (FileNotFoundException)
+            //{
+            //    Console.WriteLine("ファイルが存在しません");
+            //}
+
+            ////5.5.1
+            //string a = "data";
+            //string b = "logs";
+
+            //// data/logs を結合
+            //string c = Path.Combine(a, b);
+            ////ディレクトリ作成
+            //if (!Directory.Exists(c))
+            //{
+            //    Directory.CreateDirectory(c);
+            //}
+            ////aの下にファイルを作る
+            //string e = Path.Combine(a,"today.txt");
+            //using (StreamWriter d = new StreamWriter(e))
+            //{
+            //    d.WriteLine("こんにちは");
+            //}
+            //Console.WriteLine("書き込みが完了しました");
+
+            //5.5.2
+            //string a = "data";
+            //if (!Directory.Exists(a))
+            //{
+            //    Console.WriteLine("data フォルダが見つかりません");
+            //    return;
+            //}
+
+            //// data フォルダ配下の .txt ファイル一覧を取得
+            //string[] files = Directory.GetFiles(a, "*.txt");
+
+            //if (files.Length == 0)
+            //{
+            //    Console.WriteLine("txt ファイルがありません");
+            //    return;
+            //}
+
+            ////ファイルの中身を表示
+            //foreach (string file in files)
+            //{
+            //    FileInfo info = new FileInfo(file);
+
+            //    Console.WriteLine($"ファイル名: {info.Name}");
+            //    Console.WriteLine($"サイズ: {info.Length} バイト");
+            //    Console.WriteLine($"最終更新日時: {info.LastWriteTime}");
+            //    Console.WriteLine("---------------------------");
+            //}
+            //5.6.1
+            //string[] d = { "a", "b", "c" };
+            //string a = "quick.txt";
+
+            //    File.WriteAllLines(a,d);
+
+            //string[] b = File.ReadAllLines(a);
+            //foreach(string i in b)
+            //{
+            //    Console.WriteLine(i);
+            //}
+            //5.7.1
+            string a = "users.csv";
+            using (StreamReader b = new StreamReader(a))
+            {
+
+            }
+
+        }
+
 
     }
 }
