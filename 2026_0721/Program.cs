@@ -2192,12 +2192,65 @@ namespace _2026_0721
             //{
             //    Console.WriteLine(i);
             //}
-            //5.7.1
-            string a = "users.csv";
-            using (StreamReader b = new StreamReader(a))
-            {
+            //5.6.1
+            //string[] d = { "a", "b", "c" };
+            //string a = "quick.txt";
 
-            }
+            //    File.WriteAllLines(a,d);
+
+            //string[] b = File.ReadAllLines(a);
+            //foreach(string i in b)
+            //{
+            //    Console.WriteLine(i);
+            //}
+            //5.7.1
+            //string a = "users.csv";
+            ////一行ずつ読み込むのはAllLine
+            //string[] b = File.ReadAllLines(a);
+            //foreach (string s in b)
+            //{
+            //    string[] c = s.Split(',');
+            //    // 列数チェック（Name,Age の2列でなければスキップ）
+            //    if (b.Length != 2)
+            //    {
+            //        Console.WriteLine($"想定外の列数です → {b}");
+            //        continue;
+            //    }
+            //    string name = b[0];
+            //    string age = b[1];
+
+            //    Console.WriteLine($"Name={name}, Age={age}");
+            //}
+            //5.7.2
+            //string s = "users.csv";
+            //string Name;
+            //int Age;
+
+            //Console.WriteLine("名前を入力してください");
+            //Name = Console.ReadLine();
+
+            //while (true)
+            //{
+            //    try
+            //    {
+            //        Console.WriteLine("年齢を入力してください");
+            //        Age = int.Parse(Console.ReadLine());
+            //        break; 
+            //    }
+            //    catch (FormatException)
+            //    {
+            //        Console.WriteLine("整数を入力してください");
+            //    }
+            //}
+
+            //using (StreamWriter c = new StreamWriter(s, append: true))
+            //{
+            //    c.WriteLine($"{Name},{Age}");
+            //}
+
+            //Console.WriteLine("CSV に追記しました");
+
+            //5.8.1
 
         }
 
