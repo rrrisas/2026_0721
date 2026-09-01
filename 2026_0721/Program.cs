@@ -2252,6 +2252,289 @@ namespace _2026_0721
 
             //5.8.1
 
+            //5.8.1
+            //    string c = "users.csv";
+            //    List<User> a = new List<User>();
+            //    using (StreamReader b = new StreamReader(c))
+            //    {
+            //        foreach (var line in File.ReadLines(c))
+            //        {
+            //            var parts = line.Split(',');
+            //            string name = parts[0];
+            //            int age = int.Parse(parts[1]);
+
+            //            a.Add(new User(name, age));
+            //        }
+            //        foreach (var u in a)
+            //        {
+            //            Console.WriteLine(u);
+            //        }
+            //        var sorted = a.OrderByDescending(u => u.Age).ToList();
+
+            //        foreach (var u in sorted)
+            //        {
+            //            Console.WriteLine(u);
+            //        }
+            //    }
+
+            //5.9.1
+            //static void PrintUsersTable(List<User> users)
+            //{
+            //    // 列幅
+            //    const int nameWidth = 20;
+            //    const int ageWidth = 5;
+            //    // ヘッダ行
+            //    Console.WriteLine(
+            //        $"{"Name".PadRight(nameWidth)} {"Age".PadLeft(ageWidth)}"
+            //    );
+            //    Console.WriteLine(new string('-', nameWidth + ageWidth + 1));
+
+            //    // 各行の表示
+            //    foreach (var u in users)
+            //    {
+            //        Console.WriteLine(
+            //            $"{u.Name.PadRight(nameWidth)} {u.Age.ToString().PadLeft(ageWidth)}"
+            //        );
+            //    }
+
+            //5.10
+            //string path = "utf-8.txt";
+            //using (StreamWriter b = new StreamWriter(path,append:false,Encoding.UTF8))
+            //{
+            //    b.WriteLine("こんにちわ");
+            //}
+            //Console.WriteLine("書き込みが完了しました");
+            //using (StreamReader c = new StreamReader(path,Encoding.UTF8))
+            //{
+            //    string line;
+            //    while ((line = c.ReadLine()) != null)
+            //    {
+            //        Console.WriteLine(line);
+            //    }
+            //}
+
+            //5.11
+
+            //Logger.Log("起動しました");
+
+            //try
+            //{
+            //    // ここにアプリの処理を書く
+            //    Logger.Log("ユーザー登録成功(Taro)");
+
+            //    // テスト用に例外を発生
+            //    throw new Exception("データベース接続エラー");
+            //}
+            //catch (Exception ex)
+            //{
+            //    Logger.Log("ERROR:" + ex.Message);
+            //}
+            //finally
+            //{
+            //    Logger.Log("終了します");
+            //}
+
+            //5.12
+            //メニュー
+
+            //    string path = "address.csv";
+            //    List<Person> list = Load(path);
+
+            //    Console.WriteLine("起動しました");
+
+            //    try
+            //    {
+            //        while (true)
+            //        {
+            //            Console.WriteLine("\n=== メニュー ===");
+            //            Console.WriteLine("1. 一覧表示");
+            //            Console.WriteLine("2. 追加");
+            //            Console.WriteLine("3. 検索（部分一致）");
+            //            Console.WriteLine("4. 削除（完全一致）");
+            //            Console.WriteLine("5. 終了");
+            //            Console.Write("選択: ");
+
+            //            string sel = Console.ReadLine();
+
+            //            switch (sel)
+            //            {
+            //                case "1": ShowAll(list); break;
+            //                case "2": Add(list); break;
+            //                case "3": Search(list); break;
+            //                case "4": Delete(list); break;
+            //                case "5":
+            //                    Save(path, list);
+            //                    Console.WriteLine("終了します");
+            //                    return;
+
+            //                default:
+            //                    Console.WriteLine("1〜5 を入力してください");
+            //                    break;
+            //            }
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Console.WriteLine("ERROR: " + ex.Message);
+            //        Console.WriteLine("アプリは継続します");
+            //    }
+            //}
+            //static List<Person> Load(string path)
+            //{
+            //    var list = new List<Person>();
+
+            //    if (!File.Exists(path))
+            //    {
+            //        using (var sw = new StreamWriter(path)) { }
+            //        return list;
+            //    }
+
+            //    using (var sr = new StreamReader(path))
+            //    {
+            //        string line;
+            //        while ((line = sr.ReadLine()) != null)
+            //        {
+            //            string[] a = line.Split(',');
+            //            if (a.Length != 3) continue;
+
+            //            list.Add(new Person(a[0], a[1], a[2]));
+            //        }
+            //    }
+
+            //    return list;
+            //}
+
+            //static void Save(string path, List<Person> list)
+            //{
+            //    using (var sw = new StreamWriter(path, false))
+            //    {
+            //        foreach (var p in list)
+            //        {
+            //            sw.WriteLine($"{p.Name},{p.Phone},{p.Email}");
+            //        }
+            //    }
+            //}
+
+            //static string Input(string label)
+            //{
+            //    while (true)
+            //    {
+            //        Console.Write($"{label}: ");
+            //        string s = Console.ReadLine();
+
+            //        if (string.IsNullOrWhiteSpace(s))
+            //        {
+            //            Console.WriteLine("空文字は不可です");
+            //            continue;
+            //        }
+            //        if (s.Contains(","))
+            //        {
+            //            Console.WriteLine("カンマは使用できません");
+            //            continue;
+            //        }
+            //        return s;
+            //    }
+            //}
+            //static void ShowAll(List<Person> list)
+            //{
+            //    if (list.Count == 0)
+            //    {
+            //        Console.WriteLine("データなし");
+            //        return;
+            //    }
+
+            //    foreach (var p in list)
+            //    {
+            //        Console.WriteLine(p);
+            //    }
+            //}
+
+            //static void Add(List<Person> list)
+            //{
+            //    string name = Input("名前");
+            //    string phone = Input("電話番号");
+            //    string email = Input("メール");
+
+            //    list.Add(new Person(name, phone, email));
+            //    Console.WriteLine("追加しました");
+            //}
+            //static void Search(List<Person> list)
+            //{
+            //    string key = Input("検索キーワード");
+
+            //    var result = list.Where(p => p.Name.Contains(key)).ToList();
+
+            //    if (result.Count == 0)
+            //    {
+            //        Console.WriteLine("該当なし");
+            //        return;
+            //    }
+
+            //    foreach (var p in result)
+            //    {
+            //        Console.WriteLine(p);
+            //    }
+            //}
+            //static void Delete(List<Person> list)
+            //{
+            //    string key = Input("削除する名前（完全一致）");
+
+            //    var target = list.FirstOrDefault(p => p.Name == key);
+
+            //    if (target == null)
+            //    {
+            //        Console.WriteLine("該当なし");
+            //        return;
+            //    }
+
+            //    list.Remove(target);
+            //    Console.WriteLine("削除しました");
+            //}
+
+            //public static int ShowPoint(int x,int y)
+            //{
+            //    return x;
+            //    return y;
+            //}
+
+            //6.1.1/2
+            //List<int> a = new List<int>();
+            //int c = 0;
+            //for (int i = 0; i < 5; i++)
+            //{
+            //    int b = int.Parse(Console.ReadLine());
+            //    a.Add(b);
+            //    c += b;
+            //}
+            //Console.WriteLine(c);
+            //foreach(int e in a)
+            //{
+            //    Console.WriteLine(e);
+            //}
+
+            //6.2.1
+            //List<string> a = new List<string>();
+            //a.Add("りんご");
+            //a.Add("バナナ");
+            //a.Add("みかん");
+
+            //foreach(string b in a)
+            //{
+            //    Console.WriteLine(b);
+            //}
+            //Console.WriteLine("フルーツを入力してください");
+            //string c = Console.ReadLine();
+            //    if (a.Contains(c))
+            //    {
+            //        Console.WriteLine(c);
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine("リストに含まれていません");
+            //    }
+
+            //6.3.1
+
         }
 
 
