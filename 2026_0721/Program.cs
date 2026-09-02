@@ -2533,7 +2533,130 @@ namespace _2026_0721
             //        Console.WriteLine("リストに含まれていません");
             //    }
 
-            //6.3.1
+            //6.3.1/6.3.2
+
+            //Dictionary<string,int>a = new Dictionary<string, int>();
+            //a.Add("Japan",300);
+            //a.Add("USA", 600);
+            //a.Add("Chaina", 700);
+
+            //Console.WriteLine("国名を入力してください");
+            //string b = Console.ReadLine();
+            //if(a.ContainsKey(b))
+            //{
+            //    Console.WriteLine($"{a[b]}");
+            //}
+            //foreach(var b in a)
+            //{
+            //    Console.WriteLine($"国名：{b.Key}、人口、{b.Value}");
+            //}
+            //6.4.1
+            //List<Student> a = new List<Student>();
+            //a.Add(new Student("b", 80));
+            //a.Add(new Student("d", 60));
+            //a.Add(new Student("c", 70));
+
+            //foreach(var r in a)
+            //{
+            //    r.ShowProfile();
+            //}
+
+            //6.5.1
+            //List<int> a = new List<int>() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+            //var evena = a.Where(n => n % 2 == 0);
+            //foreach (int b in evena) {
+            //    Console.WriteLine(b);
+            //}
+
+            //6.5.2
+            //List<string> list = new List<string>() { "banana","apple","cherry","date"};
+            //var evenlist = list.OrderBy(n => n);
+            //foreach(var b in evenlist)
+            //{
+            //    Console.WriteLine(b);
+            //}
+
+            //6.6.1
+            //List<int> a = new List<int>() {1,2,3,4,5};
+            //var evena = a.Select(n => n * 2);
+            //foreach (int b in evena)
+            //{
+            //    Console.WriteLine(b);
+            //}
+            //6.7.1
+            //List<int> a = new List<int>() {80,92,75,60,45 };
+            //double avg = a.Average();
+            //Console.WriteLine(avg);
+            //6.7.2
+            //List<int>a = new List<int>() { 80,90,75,60,45};
+            //var evena = a.Count(n => 70 <= n);
+            //foreach(var b in evena)
+            //{
+            //    Console.WriteLine(b);
+            //}
+            //6.8.1
+            //List<Student>a = new List<Student>();
+            //a.Add(new Student("a",67));
+            //a.Add(new Student("b", 97));
+            //a.Add(new Student("c", 57));
+            //a.Add(new Student("d", 47));
+            //a.Add(new Student("e", 27));
+
+            //var evena = a.Where(n => n.Score >= 60 && n.Name == "a");
+
+            //foreach (var b in evena)
+            //{
+            //    b.ShowProfile();
+            //}
+
+            //6.9.1
+            //List<Student> a = new List<Student>();
+            //a.Add(new Student("Alice", 87));
+            //a.Add(new Student("Bob", 75));
+            //a.Add(new Student("Charlie", 80));
+            //a.Add(new Student("Dave", 60));
+
+            //var evena = a.GroupBy(n => n.Score);
+
+            //foreach (var g in evena)
+            //{
+            //    Console.WriteLine($"点数: {g.Key}");
+
+            //    foreach (var s in g)
+            //    {
+            //        Console.WriteLine($"  {s.Name}");
+            //    }
+            //}
+
+            //6.10.1
+
+            //List<product> p = new List<product>();
+            //p.Add(new product("かぼちゃ", 250, "野菜"));
+            //p.Add(new product("牛肉", 1020, "肉"));
+            //p.Add(new product("飴", 130, "お菓子"));
+            //p.Add(new product("コーラ", 170, "飲料"));
+            //p.Add(new product("ピザ", 660, "惣菜"));
+
+            ////var aeven = p.Where(n => n.Price >=1000);
+            ////foreach(var b in aeven)
+            ////{
+            ////    b.ShowProfile();
+            ////}
+
+            ////商品数
+            //var evena = p.GroupBy(n => n.Category);
+            //Console.WriteLine("【カテゴリごとの商品数】");
+            //foreach (var g in evena)
+            //{
+            //    Console.WriteLine($"{g.Key}: {g.Count()} 個");
+            //}
+            //降順
+            //var evena = p.OrderByDescending(n=> n.Price);
+            //foreach(var b in evena)
+            //{
+            //    b.ShowProfile();
+            //}
+
 
         }
 
