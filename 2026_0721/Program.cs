@@ -2658,7 +2658,198 @@ namespace _2026_0721
             //}
 
 
-        }
+            //List<Employee> list = new List<Employee> ();
+            //list.Add(new FullTimeEmployee("a",300000));
+            //list.Add(new FullTimeEmployee("b", 200000));
+            //list.Add(new PartTimeEmployee("c", 1000, 20));
+            //list.Add(new PartTimeEmployee("d", 1050, 30));
+
+            //foreach(var c in list)
+            //{
+            //    //c.CalculateMonthlySalary();
+            //    Console.WriteLine($"{c.Name}の月給は{c.CalculateMonthlySalary()}円です");
+            //}
+
+            //7.2.1
+            //List<Employee> list = new List<Employee>();
+            //list.Add(new FullTimeEmployee("a", 300000));
+            //list.Add(new FullTimeEmployee("b", 200000));
+            //list.Add(new PartTimeEmployee("c", 1000, 20));
+            //list.Add(new PartTimeEmployee("d", 1050, 30));
+
+            //foreach(var a in list)
+            //{
+            //    a.ShowProfile();
+            //}
+
+            //7.3.1
+            //var emp = new FullTimeEmployee("田中", 300000m);
+
+            //emp.AddOvertimeHours(10);  // 残業10時間追加
+
+            //Console.WriteLine($"名前：{emp.Name}");
+            //Console.WriteLine($"残業時間：{emp.GetOvertimeHours()}時間");
+            //Console.WriteLine($"月給（残業代込み）：{emp.CalculateMonthlySalary()}円");
+
+            //7.4.1
+            //List<IReportable> list = new List<IReportable>();
+            //list.Add(new FullTimeEmployee("a", 300000));
+            //list.Add(new FullTimeEmployee("b", 200000));
+            //list.Add(new PartTimeEmployee("c", 1000, 20));
+            //list.Add(new PartTimeEmployee("d", 1050, 30));
+
+            //foreach(var a in list)
+            //{
+            //    Console.WriteLine(a.GenerateReport());
+            //}
+            //8.1
+            //while (true)
+            //{
+            //    try
+            //    {
+            //        Console.WriteLine("数字を入力してください");
+            //        int a = int.Parse(Console.ReadLine());
+            //        Console.WriteLine();
+            //        Console.WriteLine("演算子を入力してください");
+            //        string b = Console.ReadLine();
+            //        Console.WriteLine();
+            //        Console.WriteLine("数字を入力してください");
+            //        int c = int.Parse(Console.ReadLine());
+            //        Console.WriteLine();
+
+            //        if (b == "+")
+            //        {
+            //            Console.WriteLine($"{a}+{c} = {a + c}");
+            //            Console.WriteLine();
+            //        }
+            //        else if (b == "-")
+            //        {
+            //            Console.WriteLine($"{a}-{c} = {a - c}");
+            //            Console.WriteLine();
+            //        }
+            //        else if (b == "*")
+            //        {
+            //            Console.WriteLine($"{a}x{c} = {a * c}");
+            //            Console.WriteLine();
+            //        }
+            //        else if (b == "/")
+            //        {
+            //            Console.WriteLine($"{a}÷{c} = {a / c}");
+            //            Console.WriteLine();
+            //        }
+            //        else
+            //        {
+            //            throw new Exception();
+            //        }
+            //    }
+
+            //    catch (FormatException)
+            //    {
+
+            //        //Console.WriteLine("数字を入力してください");
+
+            //    }
+            //    catch (DivideByZeroException)
+            //    {
+            //        Console.WriteLine("０で割ることはできません");
+            //        Console.WriteLine();
+
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        Console.WriteLine($"演算子を入力してください");
+            //        Console.WriteLine();
+            //    }
+            //}
+
+            //8.2
+
+            string path = "words.csv";
+            Dictionary<string, string> word = new Dictionary<string, string>();
+            while (true)
+            {
+                Console.WriteLine("1:登録");
+                Console.WriteLine("2:一覧表示");
+                Console.WriteLine("3:検索");
+                Console.WriteLine("4:終了(保存)");
+                Console.WriteLine();
+                Console.WriteLine("番号を選択してください");
+                int a = int.Parse(Console.ReadLine());
+                Console.WriteLine();
+                switch (a)
+                {
+                    case 1:
+
+                        Console.Write("単語を入力してください:");
+                        string b = Console.ReadLine();
+                        Console.Write("意味を入力してください:");
+                        string c = Console.ReadLine();
+                        Console.WriteLine("登録が完了しました");
+                        Console.WriteLine();
+                        word[b] = c;
+                        break;
+
+                    case 2:
+                        Console.WriteLine("一覧表示");
+
+                        foreach (var d in word)
+                        {
+                            Console.WriteLine($"単語：{d.Key}、意味：{d.Value}");
+                        }
+                        Console.WriteLine();
+
+                        break;
+
+                    case 3:
+
+                        Console.WriteLine("検索する単語を入力してください");
+                        string e = Console.ReadLine();
+                        if (word.ContainsKey(e))
+                        {
+                            Console.WriteLine($"単語{e}：、意味：{word[e]}");
+                        }
+                        Console.WriteLine();
+
+                        break;
+                    case 4:
+
+                        SaveCsv(path, word);
+                        Console.WriteLine("保存して終了します");
+                        return;
+
+                    default:
+                        Console.WriteLine("1〜4を入力してください");
+                        break;
+                        static void SaveCsv(string path, Dictionary<string, string> word)
+                        {
+                            using (var sw = new StreamWriter(path))
+                            {
+                                foreach (var w in word)
+                                {
+                                    sw.WriteLine($"{w.Key},{w.Value}");
+                                }
+                            }
+                        }
+
+                        static Dictionary<string, string> LoadCsv(string path)
+                        {
+                            var dict = new Dictionary<string, string>();
+
+                            if (!File.Exists(path))
+                                return dict;
+
+                            foreach (var line in File.ReadAllLines(path))
+                            {
+                                var parts = line.Split(',');
+                                if (parts.Length == 2)
+                                {
+                                    dict[parts[0]] = parts[1];
+                                }
+                            }
+
+                            return dict;
+                        }
+                }
 
 
     }
